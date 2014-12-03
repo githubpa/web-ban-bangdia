@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>@ViewBag.Title - My ASP.NET MVC Application</title>
+        <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+        <meta name="viewport" content="width=device-width" />
+        @Styles.Render("~/Content/css")
+        @Scripts.Render("~/bundles/modernizr")
+        <script src="~/Content/ckeditor/ckeditor.js"></script>
+        <script src="~/Content/ckfinder/ckfinder.js"></script>
+        <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <script language="javascript" type="text/javascript">
+            $(function () {
+                $("#btnBrowserImage").click(function () {
+                    var ckfinder = new CKFinder();
+                    ckfinder.selectActionFunction = function (fileUrl) {
+                        $("#AnhDaiDien").val(fileUrl);
+                    };
+                    ckfinder.popup();
+                });
+            });
+        </script>
+        <script language="javascript" type="text/javascript">
+            CKEDITOR.replace("ckeContent");
+        </script>
+    </head>
+    <body>
+        <header>
+            
+                <div class="float-left">
+                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                </div>
+                <div class="float-right">
+                    <section id="login">
+                        @Html.Partial("_LoginPartial")
+                    </section>
+                    <nav>
+                        <ul id="menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Liên hệ", "Index", "QTLienHe")</li>
+                            <li>@Html.ActionLink("Băng đĩa","Index","QTBangDia")</li>
+                            <li>@Html.ActionLink("Tài khoản","Index","QTTaiKhoan")</li>
+                            <li>@Html.ActionLink("Danh mục","Index","QTDanhMuc")</li>
+                            <li>@Html.ActionLink("Đặt hàng","Index","QTDatHang")</li>
+                        </ul>
+                    </nav>
+                </div>
+
+        </header>
+        <div id="body">
+            <div id="left">
+                <div class="title"><b>Sản phẩm</b></div>
+                <div class="list">
+                    <ul>
+                        <li>@Html.ActionLink("Thẻm băng đĩa","Create","QTBangDia")</li>
+                        <li>@Html.ActionLink("Danh sách sản phẩm", "Index", "QTBangDia")</li>
+                        <li>@Html.ActionLink("Loại đĩa", "Index", "QTLoaiDia")</li>
+                        <li>@Html.ActionLink("Xuất xứ","Index","QTQuocGia")</li>
+                        <li></li>
+                    </ul>
+                </div>
+                <div class="title"><b>Tài khoản</b></div>
+                <div class="list">
+                    <ul>
+                        <li>@Html.ActionLink("Thêm tài khoản", "Create", "QTTaiKhoan")</li>
+                        <li>@Html.ActionLink("Danh sách tài khoản", "Index", "QTTaiKhoan")</li>
+                        <li></li>
+                    </ul>
+                </div>
+
+            </div>
+            @RenderSection("featured", required: false)
+            <section class="content-wrapper main-content clear-fix">
+                @RenderBody()
+            </section>
+        </div>
+        <footer>
+            <div class="content-wrapper">
+                <div class="float-left">
+                    <p>&copy; @DateTime.Now.Year - My ASP.NET MVC Application</p>
+                </div>
+            </div>
+        </footer>
+
+        @Scripts.Render("~/bundles/jquery")
+        @RenderSection("scripts", required: false)
+    </body>
+</html>

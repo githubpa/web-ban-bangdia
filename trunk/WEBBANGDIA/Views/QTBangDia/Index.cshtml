@@ -1,0 +1,42 @@
+﻿@model IEnumerable<WEBBANGDIA.Models.BangDia>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="listBangDia">
+    @foreach (var item in Model)
+    {
+        if (item.AnhDaiDien == "" || item.AnhDaiDien == null)
+        {
+            item.AnhDaiDien = "Temp/DVD.gif";
+        }
+        <div class="Dia">
+            <div class="TenDia">
+                <b>Tên đĩa: @Html.DisplayFor(itemBd => item.TenBD)</b>
+            </div>
+            <div class="AnhDia">
+                <img src="~/Images/@Html.DisplayFor(itemBd=>item.AnhDaiDien)" alt="" />
+            </div>
+            <div class="NoiDung">
+                - Loại đĩa:   <b>@Html.DisplayFor(itemBd => item.LoaiDia.TenLoai)</b><br />
+                - Dung lượng:   <b>@Html.DisplayFor(itemBd => item.DungLuongTong)</b><br />
+                - Chất lượng:   <b>@Html.DisplayFor(itemBd => item.ChatLuong.TenCL)</b><br />
+                - Giá bán:   <b>@Html.DisplayFor(itemBd => item.Gia)</b><br />
+                - Hãng sản xuất:   <b>@Html.DisplayFor(itemBd => item.HangSanXuat.TenHSX)</b> (Xuất xứ: @Html.DisplayFor(itemBd => item.HangSanXuat.QuocGia.TenQG))<br />
+            </div>
+            <div class="LienKet">
+                @Html.ActionLink("Edit", "Edit", new { id = item.MaBD }) |
+                @Html.ActionLink("Details", "Details", new { id = item.MaBD }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.MaBD })
+            </div>
+        </div>
+    }
+</div>
+

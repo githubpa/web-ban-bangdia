@@ -1,0 +1,7 @@
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+
+<h2>Index</h2>
+Chao Nam

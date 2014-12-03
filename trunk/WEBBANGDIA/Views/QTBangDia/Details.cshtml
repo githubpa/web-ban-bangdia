@@ -1,0 +1,69 @@
+﻿@model WEBBANGDIA.Models.BangDia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>BangDia</legend>
+
+    <div class="display-label">Mã băng đĩa:@Html.DisplayFor(model => model.MaBD)
+    </div>
+
+    <div class="display-label">Tên băng đĩa: @Html.DisplayFor(model => model.TenBD)
+    </div>
+
+    <div class="display-label">Loại đĩa: @Html.DisplayFor(model => model.LoaiDia.TenLoai)
+    </div>
+
+    <div class="display-label">Hãng sản xuất: @Html.DisplayFor(model => model.HangSanXuat.TenHSX)
+    </div>
+
+    <div class="display-label">Danh mục: @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
+    </div>
+
+    <div class="display-label">Chất lượng: @Html.DisplayFor(model => model.ChatLuong.TenCL)
+    </div>
+
+    <div class="display-label">Tiêu đề
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TieuDe)
+    </div>
+
+    <div class="display-label">Nội dung phát
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NoiDung)
+    </div>
+
+    <div class="display-label">Ảnh đại diện
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AnhDaiDien)
+    </div>
+
+    <div class="display-label">Dung lượng: @Html.DisplayFor(model => model.DungLuongTong)</div>
+
+    <div class="display-label">Giá gốc: @Html.DisplayFor(model => model.Gia)</div>
+
+    <div class="display-label">Giá khuyễn mãi: @Html.DisplayFor(model => model.GiaKM)</div>
+
+    <div class="display-label">Số lượng đĩa/bộ: @Html.DisplayFor(model => model.SoLuongBoDia)</div>
+
+    <div class="display-label">Số lượng đĩa còn/bộ: @Html.DisplayFor(model => model.SoLuongHienCon)</div>
+
+    <div class="display-label">Trạng thái: @Html.DisplayFor(model => model.TrangThai)</div>
+
+    <div class="display-label">Ngày tạo: @Html.DisplayFor(model => model.NgayTao)</div>
+
+    <div class="display-label">Ẩn: @Html.DisplayFor(model => model.An)</div>
+
+    <div class="display-label">Ngày cập nhật mới nhất: @Html.DisplayFor(model => model.NgayCapNhat)</div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id= Model.MaBD }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

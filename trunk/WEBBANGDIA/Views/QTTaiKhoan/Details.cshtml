@@ -1,0 +1,92 @@
+﻿@model WEBBANGDIA.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TaiKhoan</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaTK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaTK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenTK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenTK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HoTen)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HoTen)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NamSinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NamSinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoDienThoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoDienThoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MatKhau)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MatKhau)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LoaiTaiKhoan.LoaiTK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoaiTaiKhoan.LoaiTK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.An)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.An)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayAn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayAn)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayTao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayTao)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

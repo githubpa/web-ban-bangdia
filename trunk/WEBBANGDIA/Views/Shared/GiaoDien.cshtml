@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Made with WOW Slider - Create beautiful, responsive image sliders in a few clicks. Awesome skins and animations. Image carousel" />
+
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <link href="~/Content/Slide/engine0/style.css" rel="stylesheet" />
+    <script src="~/Content/Slide/engine0/jquery.js"></script>
+    <script src="~/Scripts/jquery-1.8.2.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <div id="fb-root"></div>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&appId=1573777262851758&version=v2.0";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));</script>
+
+    <div id="header">
+        <div id="logo">
+            <img src="~/Images/Logo/LoGoBangDia.jpg"/>
+        </div>
+        <div id="banner">
+            <img src="~/Images/Banner/BannerDep.jpg" />
+        </div>
+    </div>
+    
+    <div id="menu">
+        <ul>
+            <li>
+                <a href="#">HOME</a>
+            </li>
+            <li>
+                <a href="#">CONTACT</a>
+            </li>
+            <li>
+                <a href="#">NEWS</a>
+            </li>
+            <li>
+                <a href="#">SUPPORT</a>
+            </li>
+            <li>
+                <a href="#">FORUM</a>
+            </li>
+        </ul>
+    </div>
+    <div id="menuleft">
+        <div id="danhmuc">
+            <div id="tendanhmuc">Danh muc</div>
+            <ul>
+                <li><a href="">Danh muc 1</a></li>
+                <li><a href="">Danh muc 2</a></li>
+                <li><a href="">Danh muc 3</a></li>
+                <li><a href="">Danh muc 4</a></li>
+                <li><a href="">Danh muc 5</a></li>
+            </ul>
+        </div>
+        <div id="danhmuc">
+            <div id="tendanhmuc">Danh muc</div>
+            <ul>
+                <li><a href="">Danh muc 1</a></li>
+                <li><a href="">Danh muc 2</a></li>
+                <li><a href="">Danh muc 3</a></li>
+                <li><a href="">Danh muc 4</a></li>
+                <li><a href="">Danh muc 5</a></li>
+            </ul>
+        </div>
+    </div>
+    <div id="main">
+
+        @RenderBody()
+        <div id="facebook">
+
+            <div class="fb-comments" data-href="http://localhost:5471/Home/Index" data-numposts="5" data-colorscheme="light"></div>
+        </div>
+    </div>
+    <div id="menuright">
+        
+    </div>
+
+</body>
+</html>

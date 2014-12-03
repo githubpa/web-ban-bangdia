@@ -1,0 +1,63 @@
+﻿@model IEnumerable<WEBBANGDIA.Models.HangSanXuat>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaHSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenHSX)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.QuocGia.TenQG)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayTao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.An)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NgayAn)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaHSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenHSX)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.QuocGia.TenQG)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayTao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.An)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayAn)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>

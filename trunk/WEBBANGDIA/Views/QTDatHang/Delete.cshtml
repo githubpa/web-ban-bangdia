@@ -1,0 +1,54 @@
+﻿@model WEBBANGDIA.Models.DatHang
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>DatHang</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaDH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaDH)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaiKhoan.TenTK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.BangDia.TenBD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.BangDia.TenBD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayDat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayDat)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,76 @@
+﻿@model WEBBANGDIA.Models.HangSanXuat
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>HangSanXuat</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaHSX)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaHSX)
+            @Html.ValidationMessageFor(model => model.MaHSX)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenHSX)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenHSX)
+            @Html.ValidationMessageFor(model => model.TenHSX)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaQG, "QuocGia")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MaQG", String.Empty)
+            @Html.ValidationMessageFor(model => model.MaQG)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayTao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayTao)
+            @Html.ValidationMessageFor(model => model.NgayTao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.An)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.An)
+            @Html.ValidationMessageFor(model => model.An)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayAn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayAn)
+            @Html.ValidationMessageFor(model => model.NgayAn)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

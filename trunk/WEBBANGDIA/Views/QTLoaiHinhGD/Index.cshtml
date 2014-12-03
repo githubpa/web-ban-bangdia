@@ -1,0 +1,51 @@
+﻿@model IEnumerable<WEBBANGDIA.Models.LoaiHinhGiaoDich>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.MaLoaiHinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.TenLoaiHinh)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DatCoc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ThanhToan)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoaiHinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoaiHinh)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DatCoc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ThanhToan)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>
+    </tr>
+}
+
+</table>
