@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebBangDiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="BangDia">
+    <Key>
+      <PropertyRef Name="MaBD" />
+    </Key>
+    <Property Name="MaBD" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenBD" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaLoai" Type="int" Nullable="false" />
+    <Property Name="MaHSX" Type="int" Nullable="false" />
+    <Property Name="MaDM" Type="int" Nullable="false" />
+    <Property Name="MaCL" Type="int" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="AnhDaiDien" Type="nvarchar" MaxLength="100" />
+    <Property Name="DungLuongTong" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Gia" Type="float" Nullable="false" />
+    <Property Name="GiaKM" Type="float" Nullable="false" />
+    <Property Name="SoLuongBoDia" Type="int" Nullable="false" />
+    <Property Name="SoLuongHienCon" Type="int" Nullable="false" />
+    <Property Name="TrangThai" Type="nvarchar" MaxLength="200" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+    <Property Name="An" Type="bit" />
+    <Property Name="NgayCapNhat" Type="date" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="CauHinh">
+          <Property Name="Banner" Type="nvarchar" MaxLength="100" />
+          <Property Name="Background" Type="nvarchar" MaxLength="100" />
+        </EntityType>-->
+  <EntityType Name="ChatLuong">
+    <Key>
+      <PropertyRef Name="MaCL" />
+    </Key>
+    <Property Name="MaCL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenCL" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DanhMuc">
+    <Key>
+      <PropertyRef Name="MaDM" />
+    </Key>
+    <Property Name="MaDM" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenDanhMuc" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="An" Type="bit" />
+    <Property Name="NgayAn" Type="date" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DatHang">
+    <Key>
+      <PropertyRef Name="MaDH" />
+    </Key>
+    <Property Name="MaDH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTK" Type="int" Nullable="false" />
+    <Property Name="MaBD" Type="int" Nullable="false" />
+    <Property Name="MaLoaiHinh" Type="int" Nullable="false" />
+    <Property Name="NgayDat" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HangSanXuat">
+    <Key>
+      <PropertyRef Name="MaHSX" />
+    </Key>
+    <Property Name="MaHSX" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenHSX" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="MaQG" Type="int" Nullable="false" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+    <Property Name="An" Type="bit" />
+    <Property Name="NgayAn" Type="date" />
+  </EntityType>
+  <EntityType Name="LienHe">
+    <Key>
+      <PropertyRef Name="MaLH" />
+    </Key>
+    <Property Name="MaLH" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MaTK" Type="int" Nullable="false" />
+    <Property Name="TieuDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NoiDung" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MaYC" Type="int" Nullable="false" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+    <Property Name="An" Type="bit" />
+    <Property Name="NgayAn" Type="date" />
+  </EntityType>
+  <EntityType Name="LoaiDia">
+    <Key>
+      <PropertyRef Name="MaLoai" />
+    </Key>
+    <Property Name="MaLoai" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoai" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+    <Property Name="An" Type="bit" />
+  </EntityType>
+  <EntityType Name="LoaiHinhGiaoDich">
+    <Key>
+      <PropertyRef Name="MaLoaiHinh" />
+    </Key>
+    <Property Name="MaLoaiHinh" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenLoaiHinh" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DatCoc" Type="int" Nullable="false" />
+    <Property Name="ThanhToan" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="LoaiTaiKhoan">
+    <Key>
+      <PropertyRef Name="MaLoaiTK" />
+    </Key>
+    <Property Name="MaLoaiTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LoaiTK" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <EntityType Name="QuocGia">
+    <Key>
+      <PropertyRef Name="MaQG" />
+    </Key>
+    <Property Name="MaQG" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenQG" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TaiKhoan">
+    <Key>
+      <PropertyRef Name="MaTK" />
+    </Key>
+    <Property Name="MaTK" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenTK" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="HoTen" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="NamSinh" Type="int" Nullable="false" />
+    <Property Name="SoDienThoai" Type="nchar" MaxLength="15" />
+    <Property Name="Email" Type="nvarchar" MaxLength="300" />
+    <Property Name="MatKhau" Type="nvarchar" MaxLength="100" />
+    <Property Name="MaLoaiTK" Type="int" Nullable="false" />
+    <Property Name="An" Type="bit" />
+    <Property Name="NgayAn" Type="date" />
+    <Property Name="NgayTao" Type="date" Nullable="false" />
+  </EntityType>
+  <EntityType Name="YeuCau">
+    <Key>
+      <PropertyRef Name="MaYC" />
+    </Key>
+    <Property Name="MaYC" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TenYeuCau" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <Association Name="fk_BangDia_ChatLuong">
+    <End Role="ChatLuong" Type="Self.ChatLuong" Multiplicity="1" />
+    <End Role="BangDia" Type="Self.BangDia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChatLuong">
+        <PropertyRef Name="MaCL" />
+      </Principal>
+      <Dependent Role="BangDia">
+        <PropertyRef Name="MaCL" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BangDia_DM">
+    <End Role="DanhMuc" Type="Self.DanhMuc" Multiplicity="1" />
+    <End Role="BangDia" Type="Self.BangDia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DanhMuc">
+        <PropertyRef Name="MaDM" />
+      </Principal>
+      <Dependent Role="BangDia">
+        <PropertyRef Name="MaDM" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BangDia_HSX">
+    <End Role="HangSanXuat" Type="Self.HangSanXuat" Multiplicity="1" />
+    <End Role="BangDia" Type="Self.BangDia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HangSanXuat">
+        <PropertyRef Name="MaHSX" />
+      </Principal>
+      <Dependent Role="BangDia">
+        <PropertyRef Name="MaHSX" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_BangDia_LoaiDia">
+    <End Role="LoaiDia" Type="Self.LoaiDia" Multiplicity="1" />
+    <End Role="BangDia" Type="Self.BangDia" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiDia">
+        <PropertyRef Name="MaLoai" />
+      </Principal>
+      <Dependent Role="BangDia">
+        <PropertyRef Name="MaLoai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DH_BD">
+    <End Role="BangDia" Type="Self.BangDia" Multiplicity="1" />
+    <End Role="DatHang" Type="Self.DatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BangDia">
+        <PropertyRef Name="MaBD" />
+      </Principal>
+      <Dependent Role="DatHang">
+        <PropertyRef Name="MaBD" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DH_LoaiHinh">
+    <End Role="LoaiHinhGiaoDich" Type="Self.LoaiHinhGiaoDich" Multiplicity="1" />
+    <End Role="DatHang" Type="Self.DatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiHinhGiaoDich">
+        <PropertyRef Name="MaLoaiHinh" />
+      </Principal>
+      <Dependent Role="DatHang">
+        <PropertyRef Name="MaLoaiHinh" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_DH_TK">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
+    <End Role="DatHang" Type="Self.DatHang" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTK" />
+      </Principal>
+      <Dependent Role="DatHang">
+        <PropertyRef Name="MaTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_HSX_QG">
+    <End Role="QuocGia" Type="Self.QuocGia" Multiplicity="1" />
+    <End Role="HangSanXuat" Type="Self.HangSanXuat" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="QuocGia">
+        <PropertyRef Name="MaQG" />
+      </Principal>
+      <Dependent Role="HangSanXuat">
+        <PropertyRef Name="MaQG" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_LienHe_TaiKhoanLH">
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="1" />
+    <End Role="LienHe" Type="Self.LienHe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TaiKhoan">
+        <PropertyRef Name="MaTK" />
+      </Principal>
+      <Dependent Role="LienHe">
+        <PropertyRef Name="MaTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_LienHe_YeuCau">
+    <End Role="YeuCau" Type="Self.YeuCau" Multiplicity="1" />
+    <End Role="LienHe" Type="Self.LienHe" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="YeuCau">
+        <PropertyRef Name="MaYC" />
+      </Principal>
+      <Dependent Role="LienHe">
+        <PropertyRef Name="MaYC" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TK_LTK">
+    <End Role="LoaiTaiKhoan" Type="Self.LoaiTaiKhoan" Multiplicity="1" />
+    <End Role="TaiKhoan" Type="Self.TaiKhoan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="LoaiTaiKhoan">
+        <PropertyRef Name="MaLoaiTK" />
+      </Principal>
+      <Dependent Role="TaiKhoan">
+        <PropertyRef Name="MaLoaiTK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebBangDiaModelStoreContainer">
+    <EntitySet Name="BangDia" EntityType="Self.BangDia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ChatLuong" EntityType="Self.ChatLuong" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DanhMuc" EntityType="Self.DanhMuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DatHang" EntityType="Self.DatHang" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HangSanXuat" EntityType="Self.HangSanXuat" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LienHe" EntityType="Self.LienHe" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiDia" EntityType="Self.LoaiDia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiHinhGiaoDich" EntityType="Self.LoaiHinhGiaoDich" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LoaiTaiKhoan" EntityType="Self.LoaiTaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="QuocGia" EntityType="Self.QuocGia" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TaiKhoan" EntityType="Self.TaiKhoan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="YeuCau" EntityType="Self.YeuCau" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="fk_BangDia_ChatLuong" Association="Self.fk_BangDia_ChatLuong">
+      <End Role="ChatLuong" EntitySet="ChatLuong" />
+      <End Role="BangDia" EntitySet="BangDia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BangDia_DM" Association="Self.fk_BangDia_DM">
+      <End Role="DanhMuc" EntitySet="DanhMuc" />
+      <End Role="BangDia" EntitySet="BangDia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BangDia_HSX" Association="Self.fk_BangDia_HSX">
+      <End Role="HangSanXuat" EntitySet="HangSanXuat" />
+      <End Role="BangDia" EntitySet="BangDia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_BangDia_LoaiDia" Association="Self.fk_BangDia_LoaiDia">
+      <End Role="LoaiDia" EntitySet="LoaiDia" />
+      <End Role="BangDia" EntitySet="BangDia" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DH_BD" Association="Self.fk_DH_BD">
+      <End Role="BangDia" EntitySet="BangDia" />
+      <End Role="DatHang" EntitySet="DatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DH_LoaiHinh" Association="Self.fk_DH_LoaiHinh">
+      <End Role="LoaiHinhGiaoDich" EntitySet="LoaiHinhGiaoDich" />
+      <End Role="DatHang" EntitySet="DatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_DH_TK" Association="Self.fk_DH_TK">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="DatHang" EntitySet="DatHang" />
+    </AssociationSet>
+    <AssociationSet Name="fk_HSX_QG" Association="Self.fk_HSX_QG">
+      <End Role="QuocGia" EntitySet="QuocGia" />
+      <End Role="HangSanXuat" EntitySet="HangSanXuat" />
+    </AssociationSet>
+    <AssociationSet Name="fk_LienHe_TaiKhoanLH" Association="Self.fk_LienHe_TaiKhoanLH">
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+      <End Role="LienHe" EntitySet="LienHe" />
+    </AssociationSet>
+    <AssociationSet Name="fk_LienHe_YeuCau" Association="Self.fk_LienHe_YeuCau">
+      <End Role="YeuCau" EntitySet="YeuCau" />
+      <End Role="LienHe" EntitySet="LienHe" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TK_LTK" Association="Self.fk_TK_LTK">
+      <End Role="LoaiTaiKhoan" EntitySet="LoaiTaiKhoan" />
+      <End Role="TaiKhoan" EntitySet="TaiKhoan" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

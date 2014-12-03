@@ -1,0 +1,116 @@
+﻿@model WEBBANGDIA.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TaiKhoan</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaTK)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaTK)
+            @Html.ValidationMessageFor(model => model.MaTK)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenTK)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenTK)
+            @Html.ValidationMessageFor(model => model.TenTK)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.HoTen)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.HoTen)
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NamSinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NamSinh)
+            @Html.ValidationMessageFor(model => model.NamSinh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.SoDienThoai)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SoDienThoai)
+            @Html.ValidationMessageFor(model => model.SoDienThoai)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MatKhau)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MatKhau)
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaLoaiTK, "LoaiTaiKhoan")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("MaLoaiTK", String.Empty)
+            @Html.ValidationMessageFor(model => model.MaLoaiTK)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.An)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.An)
+            @Html.ValidationMessageFor(model => model.An)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayAn)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayAn)
+            @Html.ValidationMessageFor(model => model.NgayAn)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayTao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayTao)
+            @Html.ValidationMessageFor(model => model.NgayTao)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

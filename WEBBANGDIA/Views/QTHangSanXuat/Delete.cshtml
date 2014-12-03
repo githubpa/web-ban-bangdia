@@ -1,0 +1,61 @@
+﻿@model WEBBANGDIA.Models.HangSanXuat
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>HangSanXuat</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaHSX)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaHSX)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenHSX)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenHSX)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.QuocGia.TenQG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.QuocGia.TenQG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayTao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayTao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.An)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.An)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayAn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayAn)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

@@ -1,0 +1,29 @@
+﻿@model WEBBANGDIA.Models.QuocGia
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>QuocGia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaQG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaQG)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenQG)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenQG)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

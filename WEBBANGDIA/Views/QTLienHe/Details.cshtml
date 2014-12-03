@@ -1,0 +1,71 @@
+﻿@model WEBBANGDIA.Models.LienHe
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>LienHe</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaLH)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaLH)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TaiKhoan.TenTK)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TieuDe)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TieuDe)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NoiDung)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NoiDung)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.YeuCau.TenYeuCau)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.YeuCau.TenYeuCau)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayTao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayTao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.An)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.An)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayAn)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayAn)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

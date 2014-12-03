@@ -1,0 +1,60 @@
+﻿@model WEBBANGDIA.Models.LoaiHinhGiaoDich
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>LoaiHinhGiaoDich</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.MaLoaiHinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaLoaiHinh)
+            @Html.ValidationMessageFor(model => model.MaLoaiHinh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenLoaiHinh)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TenLoaiHinh)
+            @Html.ValidationMessageFor(model => model.TenLoaiHinh)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DatCoc)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DatCoc)
+            @Html.ValidationMessageFor(model => model.DatCoc)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ThanhToan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ThanhToan)
+            @Html.ValidationMessageFor(model => model.ThanhToan)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

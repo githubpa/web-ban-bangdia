@@ -1,0 +1,29 @@
+﻿@model WEBBANGDIA.Models.ChatLuong
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ChatLuong</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaCL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaCL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenCL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenCL)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

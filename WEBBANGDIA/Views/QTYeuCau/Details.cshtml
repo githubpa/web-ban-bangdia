@@ -1,0 +1,29 @@
+﻿@model WEBBANGDIA.Models.YeuCau
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>YeuCau</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaYC)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaYC)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenYeuCau)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenYeuCau)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

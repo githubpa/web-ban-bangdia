@@ -1,0 +1,176 @@
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.csprojResolveAssemblyReference.cache
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.dll.config
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.pdb
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Antlr3.Runtime.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.AspNet.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.Core.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.Consumer.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\EntityFramework.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.Edm.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.OData.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.Infrastructure.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.WebPages.OAuth.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Newtonsoft.Json.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Net.Http.Formatting.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Spatial.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Helpers.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.OData.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.WebHost.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Mvc.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Optimization.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Razor.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Deployment.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Razor.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WebGrease.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.Data.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.WebData.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\EntityFramework.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Newtonsoft.Json.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Net.Http.Formatting.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Helpers.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.WebHost.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Mvc.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Razor.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Deployment.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Razor.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.Data.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.WebPages.OAuth.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.WebData.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.AspNet.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.Core.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.Consumer.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.OData.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.Edm.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.OData.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\System.Spatial.xml
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\de\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\es\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\fr\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\it\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ja\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ko\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ru\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\de\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\es\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\fr\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\it\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ja\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ko\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ru\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\de\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\es\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\fr\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\it\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ja\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ko\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\ru\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\System.Spatial.resources.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.dll
+c:\users\namfly\documents\visual studio 2013\Projects\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.pdb
+K:\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.dll.config
+K:\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\WEBBANGDIA.pdb
+K:\WEBBANGDIA\WEBBANGDIA\bin\Antlr3.Runtime.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.AspNet.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.Core.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.Consumer.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.RelyingParty.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\EntityFramework.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.Edm.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.OData.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.Infrastructure.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.WebPages.OAuth.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\Newtonsoft.Json.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Net.Http.Formatting.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Spatial.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Helpers.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.OData.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.WebHost.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Mvc.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Optimization.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Razor.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Deployment.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Razor.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\WebGrease.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.Data.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.WebData.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\EntityFramework.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\Newtonsoft.Json.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Net.Http.Formatting.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Helpers.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.WebHost.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Mvc.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Razor.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Deployment.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.WebPages.Razor.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.Data.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Web.WebPages.OAuth.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\WebMatrix.WebData.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.AspNet.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.Core.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.Consumer.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OAuth.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\DotNetOpenAuth.OpenId.RelyingParty.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Web.Http.OData.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.Edm.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\Microsoft.Data.OData.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\System.Spatial.xml
+K:\WEBBANGDIA\WEBBANGDIA\bin\de\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\es\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\fr\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\it\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ja\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ko\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ru\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\Microsoft.Data.Edm.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\de\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\es\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\fr\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\it\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ja\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ko\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ru\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\Microsoft.Data.OData.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\de\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\es\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\fr\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\it\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ja\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ko\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\ru\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hans\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\zh-Hant\System.Spatial.resources.dll
+K:\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.dll
+K:\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.pdb
+K:\WEBBANGDIA\WEBBANGDIA\bin\CKEditor.NET.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\CKFinder.dll
+K:\WEBBANGDIA\WEBBANGDIA\bin\CKEditor.NET.pdb
+K:\WEBBANGDIA\WEBBANGDIA\bin\CKFinder.pdb
+K:\WEBBANGDIA\WEBBANGDIA\obj\Debug\WEBBANGDIA.csprojResolveAssemblyReference.cache

@@ -1,0 +1,228 @@
+﻿body {
+    font-family:Arial;
+    width:1200px;
+    margin:0 auto;
+    background: url(/Images/Background/BackgroundDep.jpg) no-repeat center center fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;   
+}
+#header{
+    background:#000000;
+    float: left;
+    height:200px;
+    width:100%;
+}
+#header #logo{
+    background: #ff0000;
+    float:left;
+    height:200px;
+}
+#header #logo img{
+    height:100%;
+    width: auto;
+    float:left;
+}
+#header #banner{
+   height:200px;
+   float:left;
+}
+#header #banner img{
+     height:100%;
+    width: auto;
+    float:left;
+}
+#header #search{
+    width: 300px;
+    height:100px;
+    background: #ff6a00;
+    float:left;
+}
+#menu{
+    width:100%;
+    height:60px;
+    float:left;
+    border-top:#0094ff solid;
+    border-bottom:#000000 solid;
+    background:#ffffff;
+}
+#menu ul{
+    list-style: none;    
+    margin:0px;
+}
+#menu ul li{    
+    padding-left:5%;
+    padding-right:5%;    
+    list-style:none;
+    border-right: 2px #000000 dotted;
+    float:left;
+    
+    font-size:20px;
+    height:60px;
+}
+
+#menu ul li a{
+    float:left;
+    margin-top:20px;
+    text-decoration:none;
+    color:black;
+}
+#menu ul li a:hover{
+    color: #ffffff;
+}
+#menu ul li:hover{
+    background: #0094ff;
+}
+#menuleft{
+    width:20%;
+    background:#d3d4d0;
+    height:auto;
+    float:left;
+}
+#menuleft #danhmuc{
+    width:100%;
+    height:auto;
+    float:left;
+}
+#menuleft #danhmuc #tendanhmuc{
+    padding-top:15px;
+    padding-bottom:15px;
+    width:100%;
+    text-align:center;
+    background:#000000;
+    color:white;
+    float:left;
+}
+#menuleft #danhmuc ul{
+    margin-top:0px;
+    padding-left:5px;
+    float:left;
+}
+#menuleft #danhmuc ul li{
+    float:left;
+    list-style: none;    
+    width:100%;
+    border-bottom:1px dotted #000000;
+
+}
+#menuleft #danhmuc ul li:hover{
+    background:#0094ff;
+}
+#menuleft #danhmuc ul li a{
+    float:left;
+    margin-top:10px;
+    margin-bottom:5px;
+    margin-left:15px;
+    text-decoration:none;
+    color:#18a39e;  
+}
+#menuleft #danhmuc ul li a:hover{
+    color:white;
+}
+#menuright{
+    width:20%;
+    height:700px;
+    float:left;
+}
+#main{
+    background:#F3EEEE;
+    width:60%;
+    height:auto;
+    float:left;
+}
+#main #listproduct{
+    float:left;
+    height:auto;
+}
+#main #listproduct .product{
+    background:#ffffff;
+    border:solid 2px #0026ff;
+    border-radius:15px;
+    float:left;
+    padding:5px;
+    margin-left:8px;
+    margin-top:5px;
+    margin-bottom:5px;
+    width:215px;
+    height: 300px;
+    
+}
+.main #facebook{
+    float:left;
+    width:100%;
+}
+.product .title{
+    height: 30px;
+    width:100%;
+    float:left;
+    border-bottom:#808080 solid 1px;
+}
+.product .title a{}
+.product a{
+    float:left;    
+    height:200px;
+    width:215px;
+    border-bottom:#808080 solid 1px;
+}
+.product a img {
+    height:150px;
+    width:155px;
+    float:left;
+    padding:30px 30px 20px 30px;
+}
+
+.product .money {
+    padding-top:8px;
+    height: 25px;
+    width:100%;
+    float:left;
+    color:#ff0000;
+    text-align:right;
+    padding-right:5px;
+    border-bottom:#808080 solid 1px;
+}
+.product .details {
+    padding-top:5px;
+    height: 25px;
+    width:50%;
+    float:left;
+    color:#808080;
+    text-align:center;
+    padding-left:0px;
+}
+.product .details a{
+    float:left;
+    width:100%;
+    height:100%;
+    text-decoration:none;
+    color:#808080;
+}
+.product .details a:hover{color:#ff6a00;}
+.product .dathang {
+    padding-top:5px;
+    height: 25px;
+    width:50%;
+    float:left;
+    color:#808080;
+    text-align:center;
+    padding-left:0px;
+    background:#0094ff;
+}
+.product .dathang:hover{background:#8826ff;}
+.product .dathang a{
+    float:left;
+    width:100%;
+    height:100%;
+    text-decoration:none;
+    color:white;
+}
+
+#slide{
+    width:60%;
+    height:auto;
+    float:left;
+}
+#footer{}
+#footer #left{}
+#footer #right{}
+#footer #main{}
