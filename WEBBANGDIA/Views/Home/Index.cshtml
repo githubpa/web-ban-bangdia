@@ -1,5 +1,7 @@
-﻿@{
-    ViewBag.Title = "Index";
+﻿@using PagedList.Mvc;
+@model PagedList.IPagedList<WEBBANGDIA.Models.BangDia>
+@{
+    ViewBag.Title = "Trang chủ";
     Layout = "~/Views/Shared/GiaoDien.cshtml";
 }
 <!-- Start WOWSlider.com BODY section --> <!-- add to the <body> of your page -->
@@ -41,64 +43,48 @@
 <script src="~/Content/Slide/engine0/script.js"></script>
 <!-- End WOWSlider.com BODY section -->
 <div id="listproduct">
-    <div class="product">
-        <div class="title">Dia 1</div>
+    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+    {
+        <div style="margin-top: 10px; width: 100%; text-align: right;">
+            Tiêu chí:
+            <select id="dropdown" title="Sắp xếp" name="dropdown" class="">
+                <option value="0">--Chọn--</option>
+                <option value="1">Theo thứ tự A - Z </option>
+                <option value="2">Giá tăng dần</option>
+                <option value="3">Giá giảm dần</option>
+            </select>
+            <input type="submit" value="Sắp xếp" />
+        </div>
+        <script type="text/javascript">
+            $('#dropdown').val('@Session["Home"]');
+        </script>
+    }
+    @foreach (var item in Model)
+    {
+        <div class="product">
+            <div class="title">@Html.DisplayFor(ItemBd => item.TenBD)</div>
 
-        <a href="#">
-            <img src="~/Images/Temp/DVD.gif" />
-        </a>
+            <a href="#">
+                <img src="~/Images/Temp/DVD.gif" />
+            </a>
 
-        <div class="money">10000000 VND</div>
-        <div class="details">
-            <a href="#">Chi tiết</a>
+            <div class="money">@Html.DisplayFor(ItemBd => item.Gia)</div>
+            <div class="details">
+                <a href="#">Chi tiết</a>
+            </div>
+            <div class="dathang">
+                <a href="#">Dat hang</a>
+            </div>
         </div>
-        <div class="dathang">
-            <a href="#">Dat hang</a>
-        </div>
-    </div>
-    <div class="product">
-        <div class="title">Dia 1</div>
-        <a href="#">
-            <img src="~/Images/Temp/DVD.gif" />
-        </a>
-
-        <div class="money">10000000 VND</div>
-        <div class="details">
-            <a href="#">Chi tiết</a>
-        </div>
-        <div class="dathang">
-            <a href="#">Dat hang</a>
-        </div>
-    </div>
-    <div class="product">
-        <div class="title">Dia 1</div>
-
-        <a href="#">
-            <img src="~/Images/Temp/DVD.gif" />
-        </a>
-
-        <div class="money">10000000 VND</div>
-        <div class="details">
-            <a href="#">Chi tiết</a>
-        </div>
-        <div class="dathang">
-            <a href="#">Dat hang</a>
-        </div>
-    </div>
-    <div class="product">
-        <div class="title">Dia 1</div>
-
-        <a href="#">
-            <img src="~/Images/Temp/DVD.gif" />
-        </a>
-
-        <div class="money">10000000 VND</div>
-        <div class="details">
-            <a href="#">Chi tiết</a>
-        </div>
-        <div class="dathang">
-            <a href="#">Dat hang</a>
-        </div>
-    </div>
+    }
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
 </div>
+
+<script type="text/javascript">
+    function SapXep(id) {
+        $.post("/trang-chu", { "id": id });
+    }
+</script>
+
+
 

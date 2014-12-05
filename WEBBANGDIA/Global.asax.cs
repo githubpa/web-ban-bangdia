@@ -24,5 +24,26 @@ namespace WEBBANGDIA
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
         }
+
+        protected void Session_Start()
+        {
+            Session["CheckLogin"] = "";
+            Session["FullName"] = "bạn!";
+            Session["UserName"] = "";
+            Session["Home"] = 0;
+            Session["AllPro"] = 0;
+            Session["LogedFullName"] = "Chào bạn!";
+
+        }
+
+        protected void Session_End()
+        {
+            Session["CheckLogin"] = "";
+            Session["FullName"] = "bạn!";
+            Session["UserName"] = "";
+            Session["Home"] = 0;
+            Session["AllPro"] = 0;
+            Session["LogedFullName"] = "Chào bạn!";
+        }
     }
 }
