@@ -1,0 +1,144 @@
+﻿@model WEBBANGDIA.Models.BangDia
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>BangDia</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.MaBD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.MaBD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TenBD)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TenBD)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LoaiDia.TenLoai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LoaiDia.TenLoai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.HangSanXuat.TenHSX)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.HangSanXuat.TenHSX)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DanhMuc.TenDanhMuc)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DanhMuc.TenDanhMuc)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ChatLuong.TenCL)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ChatLuong.TenCL)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TieuDe)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TieuDe)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NoiDung)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NoiDung)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.AnhDaiDien)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.AnhDaiDien)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.DungLuongTong)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.DungLuongTong)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Gia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Gia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.GiaKM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.GiaKM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoLuongBoDia)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuongBoDia)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.SoLuongHienCon)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.SoLuongHienCon)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TrangThai)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TrangThai)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayTao)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayTao)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.An)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.An)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.NgayCapNhat)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.NgayCapNhat)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
