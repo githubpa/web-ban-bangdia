@@ -37,7 +37,7 @@
     <div id="menu">
         <ul>
             <li>
-                @Html.ActionLink("HOME","Index","Home");
+                @Html.ActionLink("HOME","Index","Home")
             </li>
             <li>
                 @Html.ActionLink("Liên hệ", "Index", "Contact")
@@ -75,6 +75,7 @@
             </ul>
         </div>
     </div>
+    
     <div id="main">
 
         @RenderBody()
@@ -83,8 +84,34 @@
         </div>
     </div>
     <div id="menuright">
-
+    <div id="menuLogin">
+        <table>
+            <tr>
+            <td style="background-color:Purple; color:White;font-weight:bold;text-align:center">
+            Login
+            </td>
+            </tr>
+            @using (Html.BeginForm("Login", "LoginAccount", FormMethod.Post))
+            {
+                <tr>
+                <td style="padding-top: 5px">
+                Tên tài khoản: <br />
+                @*@Html.TextBox("TenTK")*@
+                @Html.TextBox("Tentk","",new { style="width:92%" })<br/>
+                Password: <br />
+                @Html.Password("Password","",new { style="width:92%" } )
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p style="padding-left: 5px" ><input type="submit" value="Đăng nhập"/><br /></p>
+                <p>
+                @Html.ActionLink("Trang chủ", "Index","Home") @Html.ActionLink("Đăng xuất", "","")</p>
+                </td>
+                </tr>                
+            }
+        </table>
     </div>
-
+        </div>
 </body>
 </html>
