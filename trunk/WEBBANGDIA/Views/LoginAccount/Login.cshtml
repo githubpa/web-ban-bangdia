@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>title</title>
+    </head>
+    <body>
+            <table>
+            <tr>
+            <td align="center" style="background-color:Purple; color:White;font-weight:bold;text-align:center">
+            Login
+            </td>
+            </tr>
+            @using (Html.BeginForm("Login", "LoginAccount", FormMethod.Post))
+            {
+                <tr>
+                <td>
+                Tên tài khoản: <br />
+                @Html.TextBox("Tentk","",new { style="width:92%;" } )<br/>
+                Password: <br />
+                @Html.Password("Password","",new { style="width:92%;" })
+                </td>
+                </tr>
+                <tr>
+                <td>
+                <p style="padding-left: 10px" align="center"><input type="submit" value="Đăng nhập"/>@Html.ActionLink("Trang chủ", "Index","Home")</p>
+                </td>
+                </tr>                
+            }
+        </table>
+    </body>
+</html>
