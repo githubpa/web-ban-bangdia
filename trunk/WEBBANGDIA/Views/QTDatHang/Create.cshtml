@@ -14,7 +14,7 @@
         <legend>DatHang</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MaDH)
+            @*@Html.LabelFor(model => model.MaDH)*@Mã đặt hàng
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.MaDH)
@@ -22,7 +22,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MaTK, "TaiKhoan")
+            Tài Khoản
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaTK", String.Empty)
@@ -30,7 +30,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MaBD, "BangDia")
+            Băng đĩa
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaBD", String.Empty)
@@ -38,7 +38,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.MaLoaiHinh, "LoaiHinhGiaoDich")
+            @Html.LabelFor(model => model.MaLoaiHinh, "Loại hình giao dịch")
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaLoaiHinh", String.Empty)
@@ -46,7 +46,7 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.NgayDat)
+            @*@Html.LabelFor(model => model.NgayDat)*@Ngày đặt
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.NgayDat)
