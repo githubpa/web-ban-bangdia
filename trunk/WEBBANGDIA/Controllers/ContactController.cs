@@ -33,7 +33,7 @@ namespace WEBBANGDIA.Controllers
                     chuoi += "</div>";
                     chuoi += "<div class=\"dmcontentright\">";
                     chuoi += "<div>";
-                    chuoi += "<h2><a href=\"#\">" + lienhe[i].TieuDe + "</a></h2>";
+                    chuoi += "<h2>" + lienhe[i].TieuDe + "</h2>";
                     chuoi += "</div>";
                     chuoi += "<p>" + lienhe[i].NoiDung + "</p>";
                     chuoi += "</div>";
@@ -45,10 +45,11 @@ namespace WEBBANGDIA.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Index(FormCollection collection, LienHe lienhe)
+        [ValidateAntiForgeryToken]        
+        public ActionResult Index(/*FormCollection collection, */LienHe lienhe)
         {
             int matk;
-            if (Session["MaTK"] == "")
+            if (Session["MaTK"] == "" || Session["MaTK"] == null)
             {
                 matk = 2;//tai khoan public
             }
@@ -56,20 +57,43 @@ namespace WEBBANGDIA.Controllers
             {
                 matk = int.Parse(Session["MaTK"].ToString());
             }
-            string tieude = collection["txtTitleContact"];
-            string noiding = collection["txtContentContact"];
-            int mayeucau =int.Parse(collection["MaYC"]);
             DateTime ngaytao = DateTime.Today;
-
-            lienhe.TieuDe=tieude;
-            lienhe.NoiDung=noiding;
-            lienhe.MaTK=matk;
-            lienhe.MaYC=mayeucau;
-            lienhe.NgayTao = ngaytao;
-
-            db.LienHes.Add(lienhe);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            if (ModelState.IsValid)
+            {
+                lienhe.MaTK = matk;
+                lienhe.NgayTao = ngaytao;
+                db.LienHes.Add(lienhe);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaYC = new SelectList(db.YeuCaus, "MaYC", "TenYeuCau", lienhe.MaYC);
+            return View(lienhe);
         }
     }
 }
+//int matk;
+//if (Session["MaTK"] == "" || Session["MaTK"] == null)
+//{
+//    matk = 2;//tai khoan public
+//}
+//else
+//{
+//    matk = int.Parse(Session["MaTK"].ToString());
+//}
+//if (collection["MaYC"] != null && collection["MaYC"] != "")
+//{
+
+//    string tieude = collection["txtTitleContact"];
+//    string noiding = collection["txtContentContact"];
+//    int mayeucau = int.Parse(collection["MaYC"]);
+//    DateTime ngaytao = DateTime.Today;
+
+//    lienhe.TieuDe = tieude;
+//    lienhe.NoiDung = noiding;
+//    lienhe.MaTK = matk;
+//    lienhe.MaYC = mayeucau;
+//    lienhe.NgayTao = ngaytao;
+
+//    db.LienHes.Add(lienhe);
+//    db.SaveChanges();
+//}
