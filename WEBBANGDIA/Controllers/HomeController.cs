@@ -72,6 +72,63 @@ namespace WEBBANGDIA.Controllers
             }
         }
 
+        [HttpGet]
+        public ActionResult All(int idDm, int? page)
+        {
+            var db = new WebBangDiaEntities();
+            const int pageSize = 12;
+            int pageNum = page ?? 1;
+            var id = int.Parse(Session["Home"].ToString());
+            if (id == 1)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderBy(p => p.TenBD);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            if (id == 2)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderBy(p => p.Gia);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            if (id == 3)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderByDescending(p => p.Gia);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            else
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderByDescending(p => p.NgayCapNhat);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+        }
+        [HttpPost]
+        public ActionResult All(FormCollection form, int idDm,   int? page)
+        {
+            const int pageSize = 12;
+            int pageNum = page ?? 1;
+            Session["Home"] = Convert.ToInt32(form["dropdown"]);
+            var id = int.Parse(Session["Home"].ToString());
+            if (id == 1)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderBy(p => p.TenBD);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            if (id == 2)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderBy(p => p.Gia);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            if (id == 3)
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderByDescending(p => p.Gia);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+            else
+            {
+                var list = db.BangDias.Where(sp => sp.An == false || sp.An == null & sp.DanhMuc.MaDM == idDm).OrderByDescending(p => p.NgayCapNhat);
+                return View(list.ToPagedList(pageNum, pageSize));
+            }
+        }
+
         public ActionResult Details(int id = 0)
         {
             BangDia bangdia = db.BangDias.Find(id);
