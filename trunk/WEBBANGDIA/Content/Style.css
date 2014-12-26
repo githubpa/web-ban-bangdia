@@ -346,6 +346,17 @@
                 clear: right;
                 min-height: 48px;
             }
+                #main .dmlienhe .dmcontent .dmcontentleft img {
+                    padding-top:5px;
+                    margin-top:5px;
+                    margin-left:20px;
+                }
+                #main .dmlienhe .dmcontent .dmcontentleft span {
+                    padding-top:5px;
+                    margin-top:5px;
+                    margin-left:5px;
+                    margin-bottom:5px;
+                }
             #main .dmlienhe .dmcontent .dmcontentright {
                 width: 70%;
                 font-size: 12px;
