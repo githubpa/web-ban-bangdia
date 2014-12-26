@@ -33,6 +33,7 @@ namespace WEBBANGDIA
             Session["Home"] = 0;
             Session["AllPro"] = 0;
             Session["LogedFullName"] = "Chào bạn!";
+			Session["MaTK"]="";
 
         }
 
@@ -44,6 +45,7 @@ namespace WEBBANGDIA
             Session["Home"] = 0;
             Session["AllPro"] = 0;
             Session["LogedFullName"] = "Chào bạn!";
+			Session["MaTK"]="";
         }
     }
 }
