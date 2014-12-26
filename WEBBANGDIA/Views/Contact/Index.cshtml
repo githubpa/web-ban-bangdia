@@ -1,7 +1,98 @@
-﻿
+@model WEBBANGDIA.Models.LienHe
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Liên hệ - Web băng đĩa";
+    <link href="~/Content/Style.css" rel="stylesheet" />
     Layout = "~/Views/Shared/GiaoDien.cshtml";
 }
-@Html.Raw(ViewBag.View)
-
+<!-- Start BODY page-->
+@using (Html.BeginForm("Index", "Contact", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div>
+        <div class="contentlienhe">
+            <div class="titlelh">
+                <span>Liên hệ gửi đến Quản trị WebSite dịch vụ băng đĩa</span>
+            </div>
+            <div class="tablelh">
+                <table>
+                    <tr>
+                        <td>Tiêu đề gửi: <span class="red">(*)</span>
+                        </td>
+                        <td>
+                            @*<input name="Contact Title" type="text" id="txtTitleContact" style="width:350px;">*@
+                            @Html.EditorFor(model => model.TieuDe, new { style="width:200px;" })
+                            @Html.ValidationMessageFor(model => model.TieuDe, String.Empty, new { @style="padding: 5px;color:red;font-size:0.8em;"})                                                        
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Nội dung: <span class="red">(*)</span>
+                        </td>
+                        <td>
+                            @*<textarea name="Contact Content" id="txtContentContact" style="width:400px;height:150px;"></textarea>*@
+                            @Html.TextAreaFor(model => model.NoiDung,new { style="width:350px;height:100px" })                            
+                            @Html.ValidationMessageFor(model => model.NoiDung, String.Empty, new { @style="padding: 5px;color:red;font-size:0.8em;"})                            
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Yêu Cầu: <span class="red">(*)</span>
+                        </td>
+                        <td>
+                            @Html.DropDownList("MaYC", String.Empty)
+                            @Html.ValidationMessageFor(model => model.MaYC, String.Empty, new { @style="padding: 5px;color:red;font-size:0.8em;"})                           
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <p style="padding: 5px; color: #969696">
+                                <span class="red">(*)</span> Là những thông tin bắt buộc!
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <div style="padding: 10px 0px">
+                                <input type="submit" name="buttonSend" value="Gửi" id="btnSend">
+                                <input type="reset" value="Làm lại">
+                            </div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="clear">
+        </div>
+        <div class="dmlienhe">
+            <div class="dmtitle">
+                <h3><span>Danh mục liên hệ</span></h3>
+            </div>
+            <div class="bartop">
+                <div class="barleft">
+                    Tài khoản
+                </div>
+                @*<div class="barcenter">
+                    &nbsp;
+                </div>*@
+                <div class="barright">
+                    Liên hệ
+                </div>
+            </div>
+            @*<div class="contentlh">
+                <div class="dmcontent">
+                <div class="dmcontentleft">
+                    <img src="~/Images/LienHe/anhtk.jpg"/>
+                    <span>Admin</span>
+                </div>
+                <div class="dmcontentright">
+                    <div>
+                        <h2><a href="#">Tiêu đề</a></h2>
+                    </div>
+                    <p>Nội dung</p>
+                </div>
+            </div>
+            </div>*@
+            @Html.Raw(ViewBag.lienhe)
+            <div class="barbottom">&nbsp;</div>
+        </div>
+    </div>
+}
