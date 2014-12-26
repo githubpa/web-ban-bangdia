@@ -11,18 +11,16 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>ChatLuong</legend>
+        <legend>Chất lượng</legend>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MaCL)
+        <div class="editor-label">Mã chất lượng
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.MaCL)
             @Html.ValidationMessageFor(model => model.MaCL)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TenCL)
+        <div class="editor-label">Tên chất lượng
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TenCL)
