@@ -1,0 +1,53 @@
+﻿@model WEBBANGDIA.Models.BangDia
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+<style type="text/css">
+    .main_details {
+        padding: 10px;
+        float: left;
+    }
+
+        .main_details .main_image {
+            float: left;
+            background: #a9a9a9;
+            width: 100%;
+            margin: 0px auto;
+            border-bottom: #708090;
+        }
+        .main_details .main_image img {
+            height: 400px;
+            width: 400px;
+            float: left;
+            margin: 0 auto;
+        }
+
+        .main_details .main_title {
+            float: left;
+            width: 100%;
+            margin: 0px auto;
+        }
+</style>
+
+<h2 align="center">Sản phẩm </h2>
+<div class="main_details">
+    <div class="main_image">
+        <img width="300px" height="300px" src="@Html.DisplayFor(model => model.AnhDaiDien)" />
+    </div>
+    
+    <div class="main_title">
+        Tên băng đĩa: @Html.DisplayFor(model => model.TenBD)
+    </div>
+    <div class="main_title">
+        Số lượng đĩa trên bộ: @Html.DisplayFor(model => model.SoLuongBoDia)
+    </div>
+    <div class="main_title">
+        Số lượng đĩa còn: @Html.DisplayFor(model => model.SoLuongHienCon)
+    </div>
+    <div class="main_title">
+        Hãng sản xuất: @Html.DisplayFor(model => model.HangSanXuat.TenHSX)<br />
+        Quốc gia: @Html.DisplayFor(model => model.HangSanXuat.QuocGia.TenQG)
+    </div>
+
+</div>
