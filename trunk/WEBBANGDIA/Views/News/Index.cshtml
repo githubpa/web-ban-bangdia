@@ -2,4 +2,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/GiaoDien.cshtml";
 }
-@Html.Raw(ViewBag.View)
+<div class="contentNews">
+    <div class="titleNews">
+    Danh mục tin sản phẩm
+</div>
+<div class="news">
+    @Html.Raw(ViewBag.View)
+</div>
+</div>
+
+
