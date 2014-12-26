@@ -71,5 +71,15 @@ namespace WEBBANGDIA.Controllers
                 return View(list.ToPagedList(pageNum, pageSize));
             }
         }
+
+        public ActionResult Details(int id = 0)
+        {
+            BangDia bangdia = db.BangDias.Find(id);
+            if (bangdia == null)
+            {
+                return HttpNotFound();
+            }
+            return View(bangdia);
+        }
     }
 }
