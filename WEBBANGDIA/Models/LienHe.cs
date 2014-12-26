@@ -26,6 +26,9 @@ namespace WEBBANGDIA.Models
         [Display(Name = "Nội dung")]
         [Required(ErrorMessage = "Nội dung không được trống")]
         public string NoiDung { get; set; }
+
+        [Display(Name = "Yêu cầu")]
+        [Required(ErrorMessage = "Yêu cầu không được trống")]
         public int MaYC { get; set; }
         public System.DateTime NgayTao { get; set; }
         public Nullable<bool> An { get; set; }
