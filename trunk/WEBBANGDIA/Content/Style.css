@@ -291,7 +291,7 @@
                 background: #2a2a2a url(/Images/LienHe/theadBG.gif) repeat-x left top;
                 display: block;
                 float: left;
-               border: 0 none;
+                border: 0 none;
                 border-bottom: 1px solid #2a2a2a;
                 color: #b6b6b6;
                 line-height: 32px;
@@ -320,10 +320,8 @@
                 }
         #main .dmlienhe .contentlh {
             float: left;
-            /*position: relative;*/
             width: 100%;
             display: block;
-            /*border-bottom:1px dashed #808080;*/
         }
         #main .dmlienhe .dmcontent {
             /*height:auto;
@@ -354,8 +352,9 @@
                 #main .dmlienhe .dmcontent .dmcontentleft span {
                     padding-top:5px;
                     margin-top:5px;
-                    margin-left:5px;
+                    margin-left:10px;
                     margin-bottom:5px;
+                    font-size:0.8em;
                 }
             #main .dmlienhe .dmcontent .dmcontentright {
                 width: 70%;
