@@ -62,15 +62,15 @@
     @foreach (var item in Model)
     {
         <div class="product">
-            <div class="title">@Html.DisplayFor(ItemBd => item.TenBD)</div>
+            <div class="title">@Html.DisplayFor(ItemBd => @item.TenBD)</div>
 
             <a href="#">
                 <img src="~/Images/Temp/DVD.gif" />
             </a>
 
-            <div class="money">@Html.DisplayFor(ItemBd => item.Gia)</div>
+            <div class="money">@Html.DisplayFor(ItemBd => @item.Gia)</div>
             <div class="details">
-                <a href="#">Chi tiết</a>
+                @Html.ActionLink("Chi tiết","Details","Home", new {id = @item.MaBD},null);
             </div>
             <div class="dathang">
                 <a href="#">Dat hang</a>
