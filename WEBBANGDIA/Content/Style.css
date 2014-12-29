@@ -121,7 +121,8 @@
 }
 #menuright{
     width:20%;
-    height:700px;
+    height:auto;
+    background: #fafafa;
     float:left;
 }
     #menuright #menuLogin {
