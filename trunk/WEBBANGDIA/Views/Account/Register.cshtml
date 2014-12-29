@@ -1,0 +1,118 @@
+﻿@model WEBBANGDIA.Models.TaiKhoan
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+<style type="text/css">
+    .register {
+        float: left;
+        margin: 30px;
+        width: 630px;
+        border: 1px solid #a9a9a9;
+        border-radius: 5px;
+        padding: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+        .register .title {
+            float: left;
+            text-align: center;
+            font-family: Tahoma;
+            font-size: 16px;
+            height: 40px;
+            width: 100%;
+        }
+
+        .register .left {
+            width: 30%;
+            height: 40px;
+            float: left;
+        }
+
+        .register .right {
+            width: 70%;
+            height: 40px;
+            float: left;
+        }
+</style>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="register">
+        <div class="title"><b>Đăng ký tài khoản</b></div>
+        <div class="left">Nhập tài khoản:</div>
+        <div class="right">
+            @Html.TextBoxFor(model => model.TenTK)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.TenTK)
+        </div>
+
+        <div class="left">
+            Nhập mật khẩu:
+        </div>
+        <div class="right">
+            @Html.PasswordFor(model => model.MatKhau)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.MatKhau)
+        </div>
+        <div class="left">
+            Nhập họ tên:
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(model => model.HoTen)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.HoTen)
+        </div>
+        <div class="left">
+            Nhập năm sinh:
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(model => model.NamSinh)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.NamSinh)
+        </div>
+        <div class="left">
+            Nhập số điện thoại:
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(model => model.SoDienThoai)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.SoDienThoai)
+        </div>
+        <div class="left">
+            Nhập email:
+        </div>
+        <div class="right">
+            @Html.TextBoxFor(model => model.Email)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+        <div class="left">
+        </div>
+        <div class="right">
+            <input type="submit" value="Đăng ký" />
+        </div>
+    </div>
+
+}

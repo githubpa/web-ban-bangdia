@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table border="1">
+<table>
     <tr>
         <th>
             @*@Html.DisplayNameFor(model => model.MaTK)*@Mã tài khoản
@@ -83,9 +83,9 @@
             @Html.DisplayFor(modelItem => item.NgayTao)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new {id = item.MaTK})|
+            @Html.ActionLink("Details", "Details", new {id = item.MaTK}) |
+            @Html.ActionLink("Delete", "Delete", new {id = item.MaTK})
         </td>
     </tr>
 }

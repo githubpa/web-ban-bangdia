@@ -65,8 +65,9 @@
             Nội dung phát
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.NoiDung)
+            @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" })
             @Html.ValidationMessageFor(model => model.NoiDung)
+
         </div>
 
         <div class="editor-label">

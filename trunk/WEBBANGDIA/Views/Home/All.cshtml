@@ -56,49 +56,67 @@
 <script src="~/Content/Slide/engine0/wowslider.js"></script>
 <script src="~/Content/Slide/engine0/script.js"></script>
 <!-- End WOWSlider.com BODY section -->
-<div id="listproduct">
-    @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+<div id="ajaxUpdate">
+    @using (Ajax.BeginForm(new AjaxOptions() {UpdateTargetId = "ajaxUpdate", OnBegin = "BeginClient"}))
     {
-        <div style="margin-top: 10px; width: 100%; text-align: right;">
-            Tiêu chí:
-            <select id="dropdown" title="Sắp xếp" name="dropdown" class="">
-                <option value="0">--Chọn--</option>
-                <option value="1">Theo thứ tự A - Z </option>
-                <option value="2">Giá tăng dần</option>
-                <option value="3">Giá giảm dần</option>
-            </select>
-            <input type="submit" value="Sắp xếp" />
-        </div>
+        if (Model != null)
+        {
+            <div id="listproduct">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+                {
+                    <div style="margin-top: 10px; width: 100%; text-align: right;">
+                        Tiêu chí:
+                        <select id="dropdown" title="Sắp xếp" name="dropdown" class="">
+                            <option value="0">--Chọn--</option>
+                            <option value="1">Theo thứ tự A - Z </option>
+                            <option value="2">Giá tăng dần</option>
+                            <option value="3">Giá giảm dần</option>
+                            <option value="4">Lượt xem giảm dần</option>
+                            <option value="5">Lượt mua giảm dần</option>
+                            <option value="6">Lượt thuê giảm dần</option>
+                        </select>
+                        <input type="submit" value="Sắp xếp" />
+                    </div>
+                    <script type="text/javascript">
+                        $('#dropdown').val('@Session["Home"]');
+                    </script>
+                }
+
+                @foreach (var item in Model)
+                {
+                    <div class="product">
+                        <div class="title">@Html.DisplayFor(ItemBd => @item.TenBD)</div>
+
+                        <a href="#">
+                            <img src="~/Images/Temp/DVD.gif" />
+                        </a>
+
+                        <div class="money">@Html.DisplayFor(ItemBd => @item.Gia)</div>
+                        <div class="details">
+                            @Html.ActionLink("Chi tiết", "Details", "Home", new {id = @item.MaBD}, null);
+                        </div>
+                        <div class="dathang">
+                            <a href="#">Dat hang</a>
+                        </div>
+                    </div>
+                    Session["idDm"] = item.DanhMuc.MaDM;
+                }
+                @Html.PagedListPager(Model, page => Url.Action("All", new {idDm = Convert.ToInt32(Session["idDm"]), page = page}), PagedListRenderOptions.OnlyShowFivePagesAtATime);
+            </div>
+        }
+        else
+        {
+            <div class="middle" style="padding: 0px;">
+                <div class="list">
+                    @Html.Raw("<p>Không có sản phẩm nào!</p>")
+                </div>
+            </div>
+        }
+
         <script type="text/javascript">
-            $('#dropdown').val('@Session["Home"]');
+            function SapXep(id) {
+                $.post("/trang-chu", { "id": id });
+            }
         </script>
     }
-    @foreach (var item in Model)
-    {
-        <div class="product">
-            <div class="title">@Html.DisplayFor(ItemBd => @item.TenBD)</div>
-
-            <a href="#">
-                <img src="~/Images/Temp/DVD.gif" />
-            </a>
-
-            <div class="money">@Html.DisplayFor(ItemBd => @item.Gia)</div>
-            <div class="details">
-                @Html.ActionLink("Chi tiết", "Details", "Home", new { id = @item.MaBD }, null);
-            </div>
-            <div class="dathang">
-                <a href="#">Dat hang</a>
-            </div>
-        </div>
-    }
-    @Html.PagedListPager(Model, page => Url.Action("Index", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
-</div>
-
-<script type="text/javascript">
-    function SapXep(id) {
-        $.post("/trang-chu", { "id": id });
-    }
-</script>
-
-
-
+    </div>

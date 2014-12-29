@@ -6,16 +6,23 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm())
-{
+@using (Html.BeginForm()) {
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>Băn Đĩa</legend>
+        <legend>BangDia</legend>
 
         <div class="editor-label">
-            Tên băng đĩa
+            @Html.LabelFor(model => model.MaBD)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.MaBD)
+            @Html.ValidationMessageFor(model => model.MaBD)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TenBD)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TenBD)
@@ -23,7 +30,7 @@
         </div>
 
         <div class="editor-label">
-            Loại đĩa
+            @Html.LabelFor(model => model.MaLoai, "LoaiDia")
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaLoai", String.Empty)
@@ -31,7 +38,7 @@
         </div>
 
         <div class="editor-label">
-            Hãng sản xuất
+            @Html.LabelFor(model => model.MaHSX, "HangSanXuat")
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaHSX", String.Empty)
@@ -39,7 +46,7 @@
         </div>
 
         <div class="editor-label">
-            Danh mục
+            @Html.LabelFor(model => model.MaDM, "DanhMuc")
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaDM", String.Empty)
@@ -47,7 +54,7 @@
         </div>
 
         <div class="editor-label">
-            Chất lượng đĩa
+            @Html.LabelFor(model => model.MaCL, "ChatLuong")
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaCL", String.Empty)
@@ -55,32 +62,31 @@
         </div>
 
         <div class="editor-label">
-            Tiêu đề
+            @Html.LabelFor(model => model.TieuDe)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.TieuDe)
+            @Html.EditorFor(model => model.TieuDe)
             @Html.ValidationMessageFor(model => model.TieuDe)
         </div>
 
         <div class="editor-label">
-            Nội dung phát
+            @Html.LabelFor(model => model.NoiDung)
         </div>
         <div class="editor-field">
-            @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" }))
+            @Html.EditorFor(model => model.NoiDung)
             @Html.ValidationMessageFor(model => model.NoiDung)
         </div>
 
         <div class="editor-label">
-            Link ảnh đại diện
+            @Html.LabelFor(model => model.AnhDaiDien)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.AnhDaiDien)
             @Html.ValidationMessageFor(model => model.AnhDaiDien)
-            <input type="button" id="btnBrowserImage" value="Browser" />
         </div>
 
         <div class="editor-label">
-            Dung lượng đĩa/bộ đĩa
+            @Html.LabelFor(model => model.DungLuongTong)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.DungLuongTong)
@@ -88,7 +94,7 @@
         </div>
 
         <div class="editor-label">
-            Giá gốc
+            @Html.LabelFor(model => model.Gia)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Gia)
@@ -96,7 +102,7 @@
         </div>
 
         <div class="editor-label">
-            Giá khuyến mãi
+            @Html.LabelFor(model => model.GiaKM)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.GiaKM)
@@ -104,7 +110,7 @@
         </div>
 
         <div class="editor-label">
-            Số lượng đĩa/bộ
+            @Html.LabelFor(model => model.SoLuongBoDia)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.SoLuongBoDia)
@@ -112,7 +118,7 @@
         </div>
 
         <div class="editor-label">
-            Số lượng đĩa còn/bộ
+            @Html.LabelFor(model => model.SoLuongHienCon)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.SoLuongHienCon)
@@ -120,18 +126,61 @@
         </div>
 
         <div class="editor-label">
-            Ghi chú
+            @Html.LabelFor(model => model.TrangThai)
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TrangThai)
             @Html.ValidationMessageFor(model => model.TrangThai)
         </div>
 
-        <div class="editor-label">Ẩn</div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayTao)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayTao)
+            @Html.ValidationMessageFor(model => model.NgayTao)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.An)
+        </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.An)
             @Html.ValidationMessageFor(model => model.An)
         </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.NgayCapNhat)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NgayCapNhat)
+            @Html.ValidationMessageFor(model => model.NgayCapNhat)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LuotView)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LuotView)
+            @Html.ValidationMessageFor(model => model.LuotView)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LuotBan)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LuotBan)
+            @Html.ValidationMessageFor(model => model.LuotBan)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LuotThue)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LuotThue)
+            @Html.ValidationMessageFor(model => model.LuotThue)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>
