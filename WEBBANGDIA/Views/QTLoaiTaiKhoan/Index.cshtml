@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.LoaiTK)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaLoaiTK }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaLoaiTK }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaLoaiTK })
         </td>
     </tr>
 }

@@ -65,9 +65,9 @@
             @Html.DisplayFor(modelItem => item.NgayAn)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "Edit", new { id = item.MaLH }) |
+            @Html.ActionLink("Details", "Details", new { id = item.MaLH }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.MaLH })
         </td>
     </tr>
 }

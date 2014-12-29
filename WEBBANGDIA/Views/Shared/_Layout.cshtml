@@ -10,6 +10,7 @@
         <script src="~/Content/ckeditor/ckeditor.js"></script>
         <script src="~/Content/ckfinder/ckfinder.js"></script>
         <script src="~/Scripts/jquery-1.8.2.min.js"></script>
+        <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
         <script language="javascript" type="text/javascript">
             $(function () {
                 $("#btnBrowserImage").click(function () {
@@ -29,12 +30,9 @@
         <header>
             
                 <div class="float-left">
-                    <p class="site-title">@Html.ActionLink("your logo here", "Index", "Home")</p>
+                    <p class="site-title">@Html.ActionLink(@Session["LogedName"].ToString(), "Index", "Home")</p>
                 </div>
                 <div class="float-right">
-                    <section id="login">
-                        @Html.Partial("_LoginPartial")
-                    </section>
                     <nav>
                         <ul id="menu">
                             <li>@Html.ActionLink("Home", "Index", "Home")</li>
@@ -57,7 +55,8 @@
                         <li>@Html.ActionLink("Danh sách sản phẩm", "Index", "QTBangDia")</li>
                         <li>@Html.ActionLink("Loại đĩa", "Index", "QTLoaiDia")</li>
                         <li>@Html.ActionLink("Xuất xứ","Index","QTQuocGia")</li>
-                        <li>@Html.ActionLink("Đặt Hàng","Index","QTĐatHang")</li>
+                        <li>@Html.ActionLink("Hãng Sản Xuất", "Index", "QTHangSanXuat")</li>
+                        <li>@Html.ActionLink("Đặt Hàng","Index","QTDatHang")</li>
                         <li></li>
                     </ul>
                 </div>
@@ -67,7 +66,6 @@
                         <li>@Html.ActionLink("Thêm tài khoản", "Create", "QTTaiKhoan")</li>
                         <li>@Html.ActionLink("Danh sách tài khoản", "Index", "QTTaiKhoan")</li>
                         <li>@Html.ActionLink("Liên hệ","Index","QTLienHe")</li>
-                        <li>@Html.ActionLink("Hãng Sản Xuất","Index","QTHangSanXuat")</li>
                         <li>@Html.ActionLink("Yêu Cầu","Index","QTYeuCau")</li>
                         <li></li>
                     </ul>

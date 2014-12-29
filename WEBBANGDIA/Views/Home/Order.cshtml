@@ -1,0 +1,22 @@
+﻿@using WEBBANGDIA.Models
+@model WEBBANGDIA.Models.BangDia
+
+@{
+    ViewBag.Title = "Đặt hàng";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+
+<h2>Đặt hàng</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div style="text-align: center; height: 30px; width: auto;padding-top: 10px;" >
+        @Html.DropDownList("MaLoaiHinh", String.Empty)
+    </div>
+        <div style="">
+            <input type="submit" value="Chọn"/>
+        </div>
+}
+

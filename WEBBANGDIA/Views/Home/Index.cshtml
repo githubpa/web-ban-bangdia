@@ -57,6 +57,7 @@
 <script src="~/Content/Slide/engine0/script.js"></script>
 <!-- End WOWSlider.com BODY section -->
 <div id="listproduct">
+    <div style="float: left;"><input type="text" id="txtText" /> <input type="submit" value="Tìm kiếm" /></div>
     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
     {
         <div style="margin-top: 10px; width: 100%; text-align: right;">
@@ -66,6 +67,9 @@
                 <option value="1">Theo thứ tự A - Z </option>
                 <option value="2">Giá tăng dần</option>
                 <option value="3">Giá giảm dần</option>
+                <option value="4">Lượt xem giảm dần</option>
+                <option value="5">Lượt mua giảm dần</option>
+                <option value="6">Lượt thuê giảm dần</option>
             </select>
             <input type="submit" value="Sắp xếp" />
         </div>
@@ -76,18 +80,18 @@
     @foreach (var item in Model)
     {
         <div class="product">
-            <div class="title">@Html.DisplayFor(ItemBd => @item.TenBD)</div>
+            <div class="title">@Html.DisplayFor(itemBd => @item.TenBD)</div>
 
             <a href="#">
                 <img src="~/Images/Temp/DVD.gif" />
             </a>
 
-            <div class="money">@Html.DisplayFor(ItemBd => @item.Gia)</div>
+            <div class="money">@Html.DisplayFor(itemBd => @item.Gia)</div>
             <div class="details">
-                @Html.ActionLink("Chi tiết","Details","Home", new {id = @item.MaBD},null);
+                @Html.ActionLink("Chi tiết", "Details", "Home", new { id = @item.MaBD }, null);
             </div>
             <div class="dathang">
-                <a href="#">Dat hang</a>
+                @Html.ActionLink("Đặt hàng", "Order", "Home", new { id = @item.MaBD }, null);
             </div>
         </div>
     }

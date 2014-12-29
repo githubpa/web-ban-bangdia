@@ -11,6 +11,7 @@
     }
 
         .main_details .main_image {
+            text-align: center;
             float: left;
             background: #a9a9a9;
             width: 95%;
@@ -39,7 +40,11 @@
 <h2 align="center">Sản phẩm </h2>
 <div class="main_details">
     <div class="main_image">
-        <img width="300px" height="300px" src="@Html.DisplayFor(model => model.AnhDaiDien)" />
+        @if (Model.AnhDaiDien == null || Model.AnhDaiDien == "")
+        {
+            Model.AnhDaiDien = @"\Images\Temp\DVD.gif";
+        }
+        <img src="@Html.DisplayFor(model => model.AnhDaiDien)" />
     </div>
     
     <div class="main_title">
@@ -54,6 +59,21 @@
     <div class="main_title">
         Hãng sản xuất: @Html.DisplayFor(model => model.HangSanXuat.TenHSX)<br />
         Quốc gia: @Html.DisplayFor(model => model.HangSanXuat.QuocGia.TenQG)
+    </div>
+    <div class="main_title">
+        Tiêu đề: @Html.DisplayFor(model => model.TieuDe)
+    </div>
+    <div class="main_title">
+        Nội dung:  @Html.DisplayFor(model => model.NoiDung)
+    </div>
+    <div class="main_title">
+        Lượt xem: @Html.DisplayFor(model => model.LuotView)
+    </div>
+    <div class="main_title">
+        Lượt bán: @Html.DisplayFor(model => model.LuotBan)
+    </div>
+    <div class="main_title">
+        Lượt thuê: @Html.DisplayFor(model => model.LuotThue)
     </div>
 
 </div>

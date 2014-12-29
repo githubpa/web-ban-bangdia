@@ -1,42 +1,75 @@
-﻿@model IEnumerable<WEBBANGDIA.Models.BangDia>
+﻿@using PagedList.Mvc
+@using WEBBANGDIA.Models
+@model PagedList.IPagedList<WEBBANGDIA.Models.BangDia>
 
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
+<h2>Danh sách sản phẩm</h2>
+<style type="text/css">
+    a {
+    }
+</style>
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+@using (Html.BeginForm("Index", "QTBangDia", FormMethod.Get))
+{
+    <div class="col-sm-offset-3">
+        Tìm  @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </div>
+    <br />
+    <table>
+        <tr>
+            <th>@Html.ActionLink("Tên băng đĩa", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Loại đĩa", "Index", new { sortOrder = ViewBag.TypedickSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("HSX", "Index", new { sortOrder = ViewBag.HSXSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Giá", "Index", new { sortOrder = ViewBag.PriceSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Xem", "Index", new { sortOrder = ViewBag.ViewSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Bán", "Index", new { sortOrder = ViewBag.BuySortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Thuê", "Index", new { sortOrder = ViewBag.ThueSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th></th>
+        </tr>
 
-<div class="listBangDia">
-    @foreach (var item in Model)
-    {
-        if (item.AnhDaiDien == "" || item.AnhDaiDien == null)
+        @foreach (var item in Model)
         {
-            item.AnhDaiDien = "Temp/DVD.gif";
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TenBD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiDia.TenLoai)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.HangSanXuat.TenHSX)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Gia)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LuotView)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LuotBan)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LuotThue)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.MaBD }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.MaBD }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.MaBD })
+                </td>
+            </tr>
         }
-        <div class="Dia">
-            <div class="TenDia">
-                <b>Tên đĩa: @Html.DisplayFor(itemBd => item.TenBD)</b>
-            </div>
-            <div class="AnhDia">
-                <img src="~/Images/@Html.DisplayFor(itemBd=>item.AnhDaiDien)" />
-            </div>
-            <div class="NoiDung">
-                - Loại đĩa:   <b>@Html.DisplayFor(itemBd => item.LoaiDia.TenLoai)</b><br />
-                - Dung lượng:   <b>@Html.DisplayFor(itemBd => item.DungLuongTong)</b><br />
-                - Chất lượng:   <b>@Html.DisplayFor(itemBd => item.ChatLuong.TenCL)</b><br />
-                - Giá bán:   <b>@Html.DisplayFor(itemBd => item.Gia)</b><br />
-                - Hãng sản xuất:   <b>@Html.DisplayFor(itemBd => item.HangSanXuat.TenHSX)</b> (Xuất xứ: @Html.DisplayFor(itemBd => item.HangSanXuat.QuocGia.TenQG))<br />
-            </div>
-            <div class="LienKet">
-                @Html.ActionLink("Edit", "Edit", new { id = item.MaBD }) |
-                @Html.ActionLink("Details", "Details", new { id = item.MaBD }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.MaBD })
-            </div>
-        </div>
-    }
-</div>
 
+    </table>
+    <div class="col-sm-offset-6">
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+        @Html.PagedListPager(Model, trang => Url.Action("Index",
+                new { trang, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
+}

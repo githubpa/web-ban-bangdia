@@ -1,0 +1,23 @@
+﻿@model WEBBANGDIA.Models.TaiKhoan
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+<html>
+<head>
+    <title>title</title>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div style="margin: 0 auto; width: 300px; border: 1px solid #a9a9a9; border-radius: 5px; padding: 10px; margin-top: 30px; margin-bottom: 30px;">
+            <div style="text-align: center; font-family: Tahoma; font-size: 16px; height: 40px;"><b>Đăng nhập hệ thống</b></div>
+            Nhập tài khoản: @Html.TextBoxFor(model => model.TenTK)<br /><br />
+            Nhập mật khẩu: @Html.PasswordFor(model => model.MatKhau)<br /><br />
+            <p style="padding-left: 50px"><input type="submit" value="Đăng nhập" />  @Html.ActionLink("Đăng ký mới","Register")</p>
+        </div>
+    }
+</body>
+</html>
