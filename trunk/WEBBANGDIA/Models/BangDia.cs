@@ -22,33 +22,36 @@ namespace WEBBANGDIA.Models
         }
     
         public int MaBD { get; set; }
+        [Required(ErrorMessage = "Tên băng đĩa phải nhập")]
         public string TenBD { get; set; }
         public int MaLoai { get; set; }
         public int MaHSX { get; set; }
         public int MaDM { get; set; }
         public int MaCL { get; set; }
-        [Display(Name = "Tiêu đề")]
-        [Required(ErrorMessage = "Tiêu đề không được trống")]
+        [Required(ErrorMessage = "Tiêu đề phải nhập")]
         public string TieuDe { get; set; }
-        [Display(Name = "Nội dung")]
-        [Required(ErrorMessage = "Nội dung không được trống")]
+        [Required(ErrorMessage = "Nội dung phải nhập")]
         public string NoiDung { get; set; }
+    
         public string AnhDaiDien { get; set; }
-        [Display(Name = "Dung lượng")]
-        [Required(ErrorMessage = "Dung lượng không được trống")]
+        [Required(ErrorMessage = "Dung lượng phải nhập")]
         public string DungLuongTong { get; set; }
-        [Range(0, int.MaxValue, ErrorMessage = "Nhập 1 số")]
+        [Required(ErrorMessage = "Giá phải nhập")]
         public double Gia { get; set; }
-        [Range(0, int.MaxValue, ErrorMessage = "Nhập 1 số")]
+        [Required(ErrorMessage = "Giá khuyến mãi phải nhập")]
         public double GiaKM { get; set; }
-        [Range(0, int.MaxValue, ErrorMessage = "Nhập 1 số")]
+        [Required(ErrorMessage = "Số lượng đĩa/bộ còn phải nhập")]
         public int SoLuongBoDia { get; set; }
-        [Range(0, int.MaxValue, ErrorMessage = "Nhập 1 số")]
+        [Required(ErrorMessage = "Số lượng đĩa phải nhập")]
         public int SoLuongHienCon { get; set; }
+        [Required(ErrorMessage = "Trạng thái phải nhập")]
         public string TrangThai { get; set; }
         public System.DateTime NgayTao { get; set; }
         public Nullable<bool> An { get; set; }
         public Nullable<System.DateTime> NgayCapNhat { get; set; }
+        public Nullable<int> LuotView { get; set; }
+        public Nullable<int> LuotBan { get; set; }
+        public Nullable<int> LuotThue { get; set; }
     
         public virtual ChatLuong ChatLuong { get; set; }
         public virtual DanhMuc DanhMuc { get; set; }
