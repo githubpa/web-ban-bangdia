@@ -11,19 +11,9 @@ namespace WEBBANGDIA
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
-            routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
-            routes.MapRoute(
-               "RouteIndex",
-               "trang-chu",
-               new
-               {
-                   controller = "Home",
-                   action = "Index",
-               }
-           );
             routes.MapRoute(
               "RouteIndexNon",
-              "",
+              "trang-chu",
               new
               {
                   controller = "Home",
@@ -33,8 +23,18 @@ namespace WEBBANGDIA
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}",
-                defaults: new {controller = "Home", action = "Index"},
-                namespaces: new[]{"WEBBANGDIA"}
+                defaults: new { controller = "Home", action = "Index" },
+                namespaces: new[] { "WEBBANGDIA" }
+            );
+            routes.MapRoute(
+                "RouteAll",
+                "{idDm}/TenDm-{TenDanhMuc}",
+                new
+                {
+                    controller = "Home",
+                    action = "All",
+                    id = "idDm"
+                }
             );
         }
     }
