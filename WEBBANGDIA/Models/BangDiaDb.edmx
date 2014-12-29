@@ -27,12 +27,16 @@
           <Property Name="NgayTao" Type="date" Nullable="false" />
           <Property Name="An" Type="bit" />
           <Property Name="NgayCapNhat" Type="date" />
+          <Property Name="LuotView" Type="int" />
+          <Property Name="LuotBan" Type="int" />
+          <Property Name="LuotThue" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
         <EntityType Name="CauHinh">
           <Property Name="Banner" Type="nvarchar" MaxLength="100" />
           <Property Name="Background" Type="nvarchar" MaxLength="100" />
+          <Property Name="LuotTruyCap" Type="int" />
         </EntityType>-->
         <EntityType Name="ChatLuong">
           <Key>
@@ -368,6 +372,9 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
           <Property Name="NgayTao" Type="DateTime" Nullable="false" Precision="0" />
           <Property Name="An" Type="Boolean" />
           <Property Name="NgayCapNhat" Type="DateTime" Precision="0" />
+          <Property Name="LuotView" Type="Int32" />
+          <Property Name="LuotBan" Type="Int32" />
+          <Property Name="LuotThue" Type="Int32" />
           <NavigationProperty Name="ChatLuong" Relationship="Self.fk_BangDia_ChatLuong" FromRole="BangDia" ToRole="ChatLuong" />
           <NavigationProperty Name="DanhMuc" Relationship="Self.fk_BangDia_DM" FromRole="BangDia" ToRole="DanhMuc" />
           <NavigationProperty Name="HangSanXuat" Relationship="Self.fk_BangDia_HSX" FromRole="BangDia" ToRole="HangSanXuat" />
@@ -725,6 +732,9 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
                 <ScalarProperty Name="NgayTao" ColumnName="NgayTao" />
                 <ScalarProperty Name="An" ColumnName="An" />
                 <ScalarProperty Name="NgayCapNhat" ColumnName="NgayCapNhat" />
+                <ScalarProperty Name="LuotView" ColumnName="LuotView" />
+                <ScalarProperty Name="LuotBan" ColumnName="LuotBan" />
+                <ScalarProperty Name="LuotThue" ColumnName="LuotThue" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
