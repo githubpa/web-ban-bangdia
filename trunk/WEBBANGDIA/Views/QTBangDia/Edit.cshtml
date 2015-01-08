@@ -13,129 +13,182 @@
 
     <fieldset>
         <legend>Băn Đĩa</legend>
-
-        <div class="editor-label">
-            Tên băng đĩa
+        <div class="editor">
+            <div class="editor-label">
+                Mã
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.MaBD)
+                @Html.ValidationMessageFor(model => model.MaBD)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TenBD)
-            @Html.ValidationMessageFor(model => model.TenBD)
+        <div class="editor">
+            <div class="editor-label">
+                Tên băng đĩa
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TenBD)
+                @Html.ValidationMessageFor(model => model.TenBD)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Loại đĩa
+        <div class="editor">
+            <div class="editor-label">
+                Loại đĩa
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("MaLoai", String.Empty)
+                @Html.ValidationMessageFor(model => model.MaLoai)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("MaLoai", String.Empty)
-            @Html.ValidationMessageFor(model => model.MaLoai)
+        <div class="editor">
+            <div class="editor-label">
+                Hãng sản xuất
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("MaHSX", String.Empty)
+                @Html.ValidationMessageFor(model => model.MaHSX)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Hãng sản xuất
+        <div class="editor">
+            <div class="editor-label">
+                Danh mục
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("MaDM", String.Empty)
+                @Html.ValidationMessageFor(model => model.MaDM)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("MaHSX", String.Empty)
-            @Html.ValidationMessageFor(model => model.MaHSX)
+        <div class="editor">
+            <div class="editor-label">
+                Chất lượng đĩa
+            </div>
+            <div class="editor-field">
+                @Html.DropDownList("MaCL", String.Empty)
+                @Html.ValidationMessageFor(model => model.MaCL)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Danh mục
+        <div class="editor">
+            <div class="editor-label">
+                Tiêu đề
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.TieuDe)
+                @Html.ValidationMessageFor(model => model.TieuDe)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("MaDM", String.Empty)
-            @Html.ValidationMessageFor(model => model.MaDM)
+        <div class="editor">
+            <div class="editor-label">
+                Nội dung phát
+            </div>
+            <div class="editor-field">
+                @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" }))
+                @Html.ValidationMessageFor(model => model.NoiDung)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Chất lượng đĩa
+        <div class="editor">
+            <div class="editor-label">
+                Link ảnh đại diện
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.AnhDaiDien)
+                @Html.ValidationMessageFor(model => model.AnhDaiDien)
+                <input type="button" id="btnBrowserImage" value="Browser" />
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.DropDownList("MaCL", String.Empty)
-            @Html.ValidationMessageFor(model => model.MaCL)
+        <div class="editor">
+            <div class="editor-label">
+                Dung lượng đĩa/bộ đĩa
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DungLuongTong)
+                @Html.ValidationMessageFor(model => model.DungLuongTong)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Tiêu đề
+        <div class="editor">
+            <div class="editor-label">
+                Giá gốc
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Gia)
+                @Html.ValidationMessageFor(model => model.Gia)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.TieuDe)
-            @Html.ValidationMessageFor(model => model.TieuDe)
+        <div class="editor">
+            <div class="editor-label">
+                Giá khuyến mãi
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.GiaKM)
+                @Html.ValidationMessageFor(model => model.GiaKM)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Nội dung phát
+        <div class="editor">
+            <div class="editor-label">
+                Số lượng đĩa/bộ
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoLuongBoDia)
+                @Html.ValidationMessageFor(model => model.SoLuongBoDia)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.TextAreaFor(model => model.NoiDung, new { @id = "ckeContent" }))
-            @Html.ValidationMessageFor(model => model.NoiDung)
+        <div class="editor">
+            <div class="editor-label">
+                Số lượng đĩa còn/bộ
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.SoLuongHienCon)
+                @Html.ValidationMessageFor(model => model.SoLuongHienCon)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Link ảnh đại diện
+        <div class="editor">
+            <div class="editor-label">
+                Lượt view
+            </div>
+            <div class="editor-field">
+                @Html.LabelFor(model => model.LuotView)
+                @Html.ValidationMessageFor(model => model.LuotView)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.AnhDaiDien)
-            @Html.ValidationMessageFor(model => model.AnhDaiDien)
-            <input type="button" id="btnBrowserImage" value="Browser" />
+        <div class="editor">
+            <div class="editor-label">
+                Lượt bán
+            </div>
+            <div class="editor-field">
+                @Html.LabelFor(model => model.LuotBan)
+                @Html.ValidationMessageFor(model => model.LuotBan)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Dung lượng đĩa/bộ đĩa
+        <div class="editor">
+            <div class="editor-label">
+                Lượt thuê
+            </div>
+            <div class="editor-field">
+                @Html.LabelFor(model => model.LuotThue)
+                @Html.ValidationMessageFor(model => model.LuotThue)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DungLuongTong)
-            @Html.ValidationMessageFor(model => model.DungLuongTong)
+        <div class="editor">
+            <div class="editor-label">
+                Ghi chú
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TrangThai)
+                @Html.ValidationMessageFor(model => model.TrangThai)
+            </div>
         </div>
-
-        <div class="editor-label">
-            Giá gốc
+        <div class="editor">
+            <div class="editor-label">Ẩn</div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.An)
+                @Html.ValidationMessageFor(model => model.An)
+            </div>
         </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Gia)
-            @Html.ValidationMessageFor(model => model.Gia)
+        <div class="editor">
+            <p>
+                <input type="submit" value="Save" />
+            </p>
         </div>
-
-        <div class="editor-label">
-            Giá khuyến mãi
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.GiaKM)
-            @Html.ValidationMessageFor(model => model.GiaKM)
-        </div>
-
-        <div class="editor-label">
-            Số lượng đĩa/bộ
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoLuongBoDia)
-            @Html.ValidationMessageFor(model => model.SoLuongBoDia)
-        </div>
-
-        <div class="editor-label">
-            Số lượng đĩa còn/bộ
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SoLuongHienCon)
-            @Html.ValidationMessageFor(model => model.SoLuongHienCon)
-        </div>
-
-        <div class="editor-label">
-            Ghi chú
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TrangThai)
-            @Html.ValidationMessageFor(model => model.TrangThai)
-        </div>
-
-        <div class="editor-label">Ẩn</div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.An)
-            @Html.ValidationMessageFor(model => model.An)
-        </div>
-        <p>
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
+</fieldset>
 }
 
 <div>

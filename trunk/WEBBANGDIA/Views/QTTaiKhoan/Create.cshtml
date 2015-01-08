@@ -11,94 +11,54 @@
     @Html.ValidationSummary(true)
 
     <fieldset>
-        <legend>TaiKhoan</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MaTK,"Mã tài khoản")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.MaTK)
-            @Html.ValidationMessageFor(model => model.MaTK)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TenTK,"Tên tài khoản")
+        
+        <div class="editor-label">Tên tài khoản
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.TenTK)
             @Html.ValidationMessageFor(model => model.TenTK)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HoTen,"Họ tên")
+        <div class="editor-label">Họ tên 
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.HoTen)
             @Html.ValidationMessageFor(model => model.HoTen)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NamSinh,"Năm sinh")
+        <div class="editor-label">Năm sinh
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.NamSinh)
             @Html.ValidationMessageFor(model => model.NamSinh)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.SoDienThoai,"Số điện thoại")
+        <div class="editor-label">Số điện thoại
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.SoDienThoai)
             @Html.ValidationMessageFor(model => model.SoDienThoai)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Email)
+        <div class="editor-label">Email
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.Email)
             @Html.ValidationMessageFor(model => model.Email)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MatKhau,"Mật khẩu")
+        <div class="editor-label">Mật khẩu
         </div>
         <div class="editor-field">
             @Html.EditorFor(model => model.MatKhau)
             @Html.ValidationMessageFor(model => model.MatKhau)
         </div>
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.MaLoaiTK, "Loại tài khoản")
+        <div class="editor-label">Loại tài khoản
         </div>
         <div class="editor-field">
             @Html.DropDownList("MaLoaiTK", String.Empty)
             @Html.ValidationMessageFor(model => model.MaLoaiTK)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.An,"Ẩn")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.An)
-            @Html.ValidationMessageFor(model => model.An)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NgayAn,"Ngày ẩn")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NgayAn)
-            @Html.ValidationMessageFor(model => model.NgayAn)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.NgayTao,"Ngày tạo")
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.NgayTao)
-            @Html.ValidationMessageFor(model => model.NgayTao)
         </div>
 
         <p>

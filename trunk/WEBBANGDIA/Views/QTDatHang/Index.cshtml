@@ -1,62 +1,106 @@
-﻿@model IEnumerable<WEBBANGDIA.Models.DatHang>
-
+﻿@using PagedList.Mvc
+@using WEBBANGDIA.Models
+@model PagedList.IPagedList<WEBBANGDIA.Models.DatHang>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách đặt hàng";
 }
 
-<h2>Index</h2>
+<h2>Danh sách đặt hàng</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            @*@Html.DisplayNameFor(model => model.MaDH)*@
-            Mã đặt hàng
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.TaiKhoan.TenTK)*@
-            Tên tài khoản
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.BangDia.TenBD)*@
-            Tên băng đĩa
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)*@
-            Tên loại hình
-        </th>
-        <th>
-            @*@Html.DisplayNameFor(model => model.NgayDat)*@
-            Ngày đặt
-        </th>
-        <th></th>
-    </tr>
+@using (Html.BeginForm("Index", "QTDatHang", FormMethod.Get))
+{
+    <div class="col-sm-offset-3">
+        Tìm  @Html.TextBox("SearchString", ViewBag.CurrentFilter as string)
+        <input type="submit" value="Tìm kiếm" />
+    </div>
+    <br />
+    <table>
+        <tr>
+            <th>@Html.ActionLink("Tên tài khoản", "Index", new { sortOrder = ViewBag.NameSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Tên băng đĩa", "Index", new { sortOrder = ViewBag.NameBdSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Tên loại hình", "Index", new { sortOrder = ViewBag.NameLhSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>@Html.ActionLink("Ngày đặt", "Index", new { sortOrder = ViewBag.DateSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th>Hạn</th>
+            <th>@Html.ActionLink("Trả", "Index", new { sortOrder = ViewBag.TraSortParm, currentFilter = ViewBag.CurrentFilter }, new { @class = "a" })</th>
+            <th></th>
+        </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.MaDH)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.TaiKhoan.TenTK)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.BangDia.TenBD)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.LoaiHinhGiaoDich.TenLoaiHinh)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.NgayDat)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.MaDH}) |
-            @Html.ActionLink("Details", "Details", new { id=item.MaDH  }) |
-            @Html.ActionLink("Delete", "Delete", new {  id=item.MaDH  })
-        </td>
-    </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TaiKhoan.TenTK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BangDia.TenBD)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LoaiHinhGiaoDich.TenLoaiHinh)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NgayDat)
+                </td>
+                <td>
+                    @{
+                        if (item.MaLoaiHinh == 1)
+                        {
+                            <label style="text-align: center; color: white; width: 30px; background: #808080">M</label>
+                        }
+                        else
+                        {
+                            TimeSpan timeSpan = DateTime.Today - item.NgayDat;
+                            int totalDays = (int)timeSpan.TotalDays;
+                            if (item.Tra == false || item.Tra == null)
+                            {
+                                if (totalDays >= 15 * item.GiaHan - 5 && totalDays < 15 * item.GiaHan)
+                                {
+                                    <label style="text-align: center; color: white; width: 30px; background: #ff8c00">@totalDays</label>
+                                    <br />
+                                    @Html.ActionLink("Gia hạn", "GiaHan", new { id = item.MaDH })
+                                }
+                                if (totalDays >= 15 * item.GiaHan && totalDays < 15 * item.GiaHan + 15)
+                                {
+                                    <label style="text-align: center; color: white; width: 30px; background: red">@totalDays</label>
+                                    <br />
+                                    @Html.ActionLink("Gia hạn", "GiaHan", new { id = item.MaDH })
+                                }
+                                if (totalDays < 15 * item.GiaHan - 5)
+                                {
+                                    <label style="text-align: center; color: white; width: 30px; background: green">@totalDays</label>
+                                    <br />
+                                    @Html.ActionLink("Gia hạn", "GiaHan", new { id = item.MaDH })
+                                }
+                                if (totalDays > 15 * item.GiaHan +15)
+                                {
+                                    <label style="text-align: center; color: white; width: 30px; background: black">@totalDays</label>
+                                }
+                            }
+                            else
+                            {
+                                <label style="text-align: center; color: white; width: 30px; background: black">T</label>
+                            }
+
+                        }
+                    }
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.Tra)</td>
+                <td>
+                    @Html.ActionLink("Thay đổi", "Edit", new { id = item.MaDH }) |
+                    @Html.ActionLink("Chi tiết", "Details", new { id = item.MaDH }) |
+                    @Html.ActionLink("Xóa", "Delete", new { id = item.MaDH })
+                </td>
+            </tr>
+        }
+
+    </table>
+    <div class="col-sm-offset-6">
+        Trang: @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) / @Model.PageCount
+
+        @Html.PagedListPager(Model, trang => Url.Action("Index",
+                new { trang, sortOrder = ViewBag.CurrentSort, currentFilter = ViewBag.CurrentFilter }))
+    </div>
 }
 
-</table>

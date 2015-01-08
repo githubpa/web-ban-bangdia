@@ -4,52 +4,102 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
+<h2>Chi tiết đặt hàng</h2>
 
 <fieldset>
-    <legend>DatHang</legend>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.MaDH)*@
-        Mã đặt hàng
+    <div class="display">
+        <div class="display-label">
+            Mã đặt hàng
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MaDH)
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaDH)
+    <div class="display">
+        <div class="display-label">
+            Tên tài khoản
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+        </div>
     </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.TaiKhoan.TenTK)*@
-        Tên tài khoản
+    <div class="display">
+        <div class="display-label">
+            Tên băng đĩa
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BangDia.TenBD)
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+    <div class="display">
+        <div class="display-label">
+            Tên loại hình
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)<br />
+            Đặt cọc: @Model.LoaiHinhGiaoDich.DatCoc %
+            @{
+                int a = (int)(Model.LoaiHinhGiaoDich.DatCoc * Model.BangDia.Gia / 100);
+                <label>(@a VND)</label>
+            }<br />
+            Thanh toán: @Html.DisplayFor(model => model.LoaiHinhGiaoDich.ThanhToan) %
+            @{
+                int b = 0;
+                if (Model.MaLoaiHinh == 2)
+                {
+                    TimeSpan timeSpan = DateTime.Today - Model.NgayDat;
+                    b = 0;
+                    if (timeSpan.TotalDays > 15*Model.GiaHan && timeSpan.TotalDays < 15*Model.GiaHan + 15)
+                    {
+                        b = (int) ((Model.LoaiHinhGiaoDich.ThanhToan + 10)*Model.BangDia.Gia/100);
+                    }
+                    else if (timeSpan.TotalDays <= 15)
+                    {
+                        b = (int) (Model.LoaiHinhGiaoDich.ThanhToan*Model.GiaHan*Model.BangDia.Gia/100);
+                    }
+                    else
+                    {
+                        Model.Tra = true;
+                        Model.NgayTra = DateTime.Today;
+                        <label>Quá hạn cho phép hủy giao dịch</label>
+                    }
+                    <label>(@b VND)</label>
+                }
+                else
+                {
+                    b = a;
+                    <label>(@b VND)</label>
+                }
+            }<br />
+            Tiền thừa: <label>@{ int c = a - b; } @c</label>;
+        </div>
     </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.BangDia.TenBD)*@
-        Tên băng đĩa
+    <div class="display">
+        <div class="display-label">
+            Lần gia hạn
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.GiaHan)
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.BangDia.TenBD)
+    <div class="display">
+        <div class="display-label">
+            Ngày đặt
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NgayDat)
+        </div>
     </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)*@
-        Tên loại hình
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)
-    </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.NgayDat)*@
-        Ngày đặt
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NgayDat)
+    <div class="display">
+        <div class="display-label">
+            Trả
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Tra)-@Html.DisplayFor(model => model.NgayTra)
+        </div>
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MaDH }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

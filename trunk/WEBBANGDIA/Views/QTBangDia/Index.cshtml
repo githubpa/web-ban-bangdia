@@ -3,16 +3,18 @@
 @model PagedList.IPagedList<WEBBANGDIA.Models.BangDia>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Danh sách băng đĩa";
 }
 
 <h2>Danh sách sản phẩm</h2>
 <style type="text/css">
-    a {
+    .a {
+        color: #0000ff;
     }
+    .a:hover{color: #000080}
 </style>
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", new{@class="a"})
 </p>
 @using (Html.BeginForm("Index", "QTBangDia", FormMethod.Get))
 {
@@ -57,7 +59,7 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.LuotThue)
                 </td>
-                <td>
+                <td style="background: #e2e2e2">
                     @Html.ActionLink("Edit", "Edit", new { id = item.MaBD }) |
                     @Html.ActionLink("Details", "Details", new { id = item.MaBD }) |
                     @Html.ActionLink("Delete", "Delete", new { id = item.MaBD })

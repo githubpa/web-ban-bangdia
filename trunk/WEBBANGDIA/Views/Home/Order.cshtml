@@ -5,18 +5,62 @@
     ViewBag.Title = "Đặt hàng";
     Layout = "~/Views/Shared/GiaoDien.cshtml";
 }
-
-<h2>Đặt hàng</h2>
-
-@using (Html.BeginForm())
-{
-    @Html.AntiForgeryToken()
-    @Html.ValidationSummary(true)
-    <div style="text-align: center; height: 30px; width: auto;padding-top: 10px;" >
-        @Html.DropDownList("MaLoaiHinh", String.Empty)
-    </div>
-        <div style="">
-            <input type="submit" value="Chọn"/>
+<style type="text/css">
+    .alink {margin: 0 auto;text-align: center;color: white;text-decoration: none;float: left;}
+    .alink:hover {color: red}
+    .mua {float: left;padding: 10px;height: 20px;width: 100px;background: #ffa500;color: white;}
+    .mua:hover{background: #808080;}
+    .thue {float: left;padding: 10px;height: 20px;width: 100px;background: #008b8b;color: #ffff00;}
+    .thue:hover{background: #808080;}
+</style>
+<div style="width: auto; padding: 10px; background: #ffffff; height: auto; float: left;" >
+    <h3>Bạn muốn thuê hay mua sản phẩm của chúng tôi?</h3>
+    <div style="width: auto;float: left;">
+        <div style="border-bottom: 2px solid #808080;">
+            <h4>Tên băng đĩa: @Html.DisplayFor(model => @model.TenBD)</h4>
         </div>
-}
+       
 
+        @if (string.IsNullOrEmpty(Model.AnhDaiDien))
+        {
+            Model.AnhDaiDien = @"Temp/DVD.gif";
+        }
+        <div style="width: auto; float: left; border-right: 3px solid #808080; background: white;">
+            <img style="width: 300px; height: auto;"  src="/Images/@Html.DisplayFor(model => @model.AnhDaiDien)" />
+        </div>
+        <div style="float: right; width: 380px; background: white; padding-top: 200px;">
+            <div class="mua">
+                @Html.ActionLink("Mua đĩa", "Mua", new { id = @Model.MaBD}, new {@class="alink"})
+            </div>
+            <div class="thue">
+                @Html.ActionLink("Thuê đĩa", "Thue", new { id = @Model.MaBD }, new {@class="alink"})
+            </div>
+            @*@using(Html.BeginForm("Mua","Home", FormMethod.Post, new {id=@Model.MaBD}))
+            {
+                <input style="height: 30px; width: 100px; background: #ffa500; color: white; "type="submit" name="txtMua" value="Mua đĩa" />
+            }
+            @using (Html.BeginForm("Thue", "Home", FormMethod.Post, new { id = @Model.MaBD }))
+            {
+                <input style="height: 30px; width: 100px; background: #008b8b; color: #ffff00;" type="submit" name="txtThue" value="Thuê đĩa" />
+            }*@
+        </div>
+        <table style="padding: 5px; float: left; width: 100%; border-top: 2px solid #808080; background: #ffffff;">
+            <tr>
+                <td>Giá gốc: @Html.DisplayFor(model => @model.Gia) </td>
+                <td>Giá KM: @Html.DisplayFor(model => @model.GiaKM)</td>
+                <td>Lượt Xem: @Html.DisplayFor(model => @model.LuotView)</td>
+
+            </tr>
+            <tr>
+                <td>Chất lượng: @Html.DisplayFor(model => @model.ChatLuong.TenCL)</td>
+                <td>Loại đĩa: @Html.DisplayFor(model => @model.LoaiDia.TenLoai)</td>
+                <td>Số lượng đĩa: @Html.DisplayFor(model => @model.SoLuongHienCon)</td>
+            </tr>
+        </table>
+
+    </div>
+    <div style="float: left;width: auto;">
+        <h3>Tiêu đề: @Html.DisplayFor(model => @model.TieuDe)</h3>
+        <h4>Nội dung: <br />@Html.DisplayFor(model => @model.NoiDung)</h4>
+    </div>
+</div>

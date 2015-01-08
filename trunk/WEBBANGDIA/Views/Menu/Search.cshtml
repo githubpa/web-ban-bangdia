@@ -1,0 +1,8 @@
+﻿<div style="float: left; padding-right: 5%; padding-bottom: 13px; margin-bottom: 10px; padding-top: 15px; width: 45%; text-align: right; background: #ffffff; border-bottom: 2px solid #808080;">
+
+    @using (Html.BeginForm("Search", "Home", FormMethod.Post))
+    {
+    <input name="txtText" value="Nhập từ khóa" id="keyword" onblur=" if (this.value == '') this.value = 'Nhập từ khóa'; " onfocus=" if (this.value == 'Nhập từ khóa') this.value = ''; " />
+    <input type="submit" value="Tìm kiếm" />
+    }
+</div>

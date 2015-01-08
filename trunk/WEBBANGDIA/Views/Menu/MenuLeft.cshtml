@@ -1,19 +1,15 @@
 ﻿@using WEBBANGDIA.Models;
-<div class="box">
-    <div id="category" class="middle">
-        <ul>
-            @{
-                var list = ((List<DanhMuc>)ViewBag.MenuLeft);
-                if (list != null)
-                {
-                    foreach (var item in list)
-                    {
-                        <li>
-                            @Html.ActionLink(@item.TenDanhMuc, "All", "Home", new { idDm = @item.MaDM, page=1}, null)
-                        </li>
-                    }
-                }
+<ul>
+    @{
+        var list = ((List<DanhMuc>)ViewBag.MenuLeft);
+        if (list != null)
+        {
+            foreach (var item in list)
+            {
+                <li>
+                    @Html.ActionLink(@item.TenDanhMuc, "All", "Home", new { idDm = @item.MaDM, page = 1 }, null)
+                </li>
             }
-        </ul>
-    </div>
-</div>
+        }
+    }
+</ul>

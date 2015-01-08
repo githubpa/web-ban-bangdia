@@ -6,7 +6,8 @@
 
 <h2>Edit</h2>
 
-@using (Html.BeginForm()) {
+@using (Html.BeginForm())
+{
     @Html.AntiForgeryToken()
     @Html.ValidationSummary(true)
 
@@ -21,7 +22,8 @@
             </div>
         </div>
         <div class="editor">
-            <div class="editor-label">Tài khoản
+            <div class="editor-label">
+                Tài khoản
             </div>
             <div class="editor-field">
                 @Html.DropDownList("MaTK", String.Empty)
@@ -38,7 +40,8 @@
             </div>
         </div>
         <div class="editor">
-            <div class="editor-label">Loại hình giao dịch
+            <div class="editor-label">
+                Loại hình giao dịch
             </div>
             <div class="editor-field">
                 @Html.DropDownList("MaLoaiHinh", String.Empty)
@@ -67,11 +70,14 @@
             </div>
         </div>
         <div class="editor">
-            <p>
-                <input type="submit" value="Save" />
-            </p>
+            <div class="editor-label">Lần gia hạn</div>
+            <div class="editor-field">
+                <p>
+                    <input type="submit" value="Gia hạn" />
+                </p>
+            </div>
         </div>
-</fieldset>
+    </fieldset>
 }
 
 <div>

@@ -1,0 +1,27 @@
+﻿@model IEnumerable<WEBBANGDIA.Models.TaiKhoan>
+
+@{
+    ViewBag.Title = "Danh sách tài khoản";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+
+<h2>Tài khoản của bạn</h2>
+<table>
+    <tr>
+        <th>
+            Chào bạn
+        </th>
+    </tr>
+
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.HoTen) (@Html.DisplayFor(modelItem=>item.MaTK))
+            </td>
+        </tr>
+        @Html.ActionLink("Edit", "Update", new {id = item.MaTK}) 
+        @Html.ActionLink("Details", "Details", new {id = item.MaTK}) 
+    }
+
+</table>
+
