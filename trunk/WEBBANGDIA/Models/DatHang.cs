@@ -19,6 +19,9 @@ namespace WEBBANGDIA.Models
         public int MaBD { get; set; }
         public int MaLoaiHinh { get; set; }
         public System.DateTime NgayDat { get; set; }
+        public Nullable<bool> Tra { get; set; }
+        public Nullable<System.DateTime> NgayTra { get; set; }
+        public Nullable<int> GiaHan { get; set; }
     
         public virtual BangDia BangDia { get; set; }
         public virtual LoaiHinhGiaoDich LoaiHinhGiaoDich { get; set; }
