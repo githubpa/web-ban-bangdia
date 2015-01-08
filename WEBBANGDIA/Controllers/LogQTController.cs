@@ -29,7 +29,8 @@ namespace WEBBANGDIA.Controllers
             {
                 foreach (var taikhoans in db.TaiKhoans)
                 {
-                    if (taikhoan.TenTK == taikhoans.TenTK && taikhoan.MatKhau == taikhoans.MatKhau)
+                    if (taikhoan.TenTK == taikhoans.TenTK && taikhoan.MatKhau == taikhoans.MatKhau && taikhoans.MaLoaiTK==1 && taikhoans.An == false || taikhoans.An == null  )
+                        Session["LogedName"] = taikhoans.HoTen;
                         return RedirectToAction("Index", "QTTaiKhoan");
                 }
                 return RedirectToAction("Login");

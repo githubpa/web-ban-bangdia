@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Web.Mvc;
+using System.Data;
 using WEBBANGDIA.Models;
 
 namespace WEBBANGDIA.Controllers
@@ -9,6 +10,21 @@ namespace WEBBANGDIA.Controllers
     {
         private WebBangDiaEntities db = new WebBangDiaEntities();
 
+        public ActionResult Index()
+        {
+            if (Session != null)
+            {
+                if (Session["MaTK"].ToString()!="")
+                {
+                    int ma = (int)Session["MaTK"];
+                    var taikhoans = db.TaiKhoans.Where(t => t.MaTK == ma);
+                    return View(taikhoans.ToList());
+                }
+                return RedirectToAction("Index", "Home");
+            }
+            return RedirectToAction("Index", "Home");
+        }
+
         [HttpGet]
         public ActionResult Login()
         {
@@ -16,8 +32,6 @@ namespace WEBBANGDIA.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        [ValidateInput(false)]
         public ActionResult Login(TaiKhoan taikhoan)
         {
             if (ModelState.IsValid)
@@ -26,8 +40,8 @@ namespace WEBBANGDIA.Controllers
                 {
                     if (taikhoan.TenTK == taikhoans.TenTK && taikhoan.MatKhau == taikhoans.MatKhau)
                     {
-                        Session["FullName"] = taikhoan.TenTK;
-                        Session["MaTK"] = taikhoan.MaTK;
+                        Session["FullName"] = taikhoans.HoTen;
+                        Session["MaTK"] = taikhoans.MaTK;   
                         return RedirectToAction("Index", "Home");
                     }
                 }
@@ -54,7 +68,7 @@ namespace WEBBANGDIA.Controllers
                 taikhoan.MaLoaiTK = 4;
                 db.TaiKhoans.Add(taikhoan);
                 db.SaveChanges();
-                Session["FullName"] = taikhoan.TenTK;
+                Session["FullName"] = taikhoan.HoTen;
                 Session["MaTK"] = taikhoan.MaTK;
                 return RedirectToAction("Index","Home");
             }
@@ -66,7 +80,44 @@ namespace WEBBANGDIA.Controllers
         {
             Session["FullName"] = "bạn!";
             Session["UserName"] = "";
+            Session["MaTK"] = "";
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Update(int id = 0)
+        {
+            TaiKhoan taikhoan = db.TaiKhoans.Find(id);
+            if (taikhoan == null)
+            {
+                return HttpNotFound();
+            }
+            ViewBag.MaLoaiTK = new SelectList(db.LoaiTaiKhoans, "MaLoaiTK", "LoaiTK", taikhoan.MaLoaiTK);
+            return View(taikhoan);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [ValidateInput(false)]
+        public ActionResult Update(TaiKhoan taikhoan)
+        {
+            if (ModelState.IsValid)
+            {
+                db.Entry(taikhoan).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaLoaiTK = new SelectList(db.LoaiTaiKhoans, "MaLoaiTK", "LoaiTK", taikhoan.MaLoaiTK);
+            return View(taikhoan);
+        }
+
+        public ActionResult Details(int id = 0)
+        {
+            TaiKhoan taikhoan = db.TaiKhoans.Find(id);
+            if (taikhoan == null)
+            {
+                return HttpNotFound();
+            }
+            return View(taikhoan);
         }
     }
 }
