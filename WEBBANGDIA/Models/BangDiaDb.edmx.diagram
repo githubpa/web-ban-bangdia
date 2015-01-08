@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="3951a7ff6f9b45189c2695f719d02907" Name="Diagram1">
+      <Diagram DiagramId="9b61884101614ea0867ce7d5c4b68019" Name="Diagram1">
         <EntityTypeShape EntityType="WebBangDiaModel.BangDia" Width="1.5" PointX="5.25" PointY="1.125" IsExpanded="true" />
         <EntityTypeShape EntityType="WebBangDiaModel.ChatLuong" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
         <EntityTypeShape EntityType="WebBangDiaModel.DanhMuc" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />

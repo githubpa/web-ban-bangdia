@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="WebBangDiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="WebBangDiaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="BangDia">
           <Key>
             <PropertyRef Name="MaBD" />
@@ -31,13 +31,6 @@
           <Property Name="LuotBan" Type="int" />
           <Property Name="LuotThue" Type="int" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
-        <EntityType Name="CauHinh">
-          <Property Name="Banner" Type="nvarchar" MaxLength="100" />
-          <Property Name="Background" Type="nvarchar" MaxLength="100" />
-          <Property Name="LuotTruyCap" Type="int" />
-        </EntityType>-->
         <EntityType Name="ChatLuong">
           <Key>
             <PropertyRef Name="MaCL" />
@@ -64,6 +57,9 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
           <Property Name="MaBD" Type="int" Nullable="false" />
           <Property Name="MaLoaiHinh" Type="int" Nullable="false" />
           <Property Name="NgayDat" Type="date" Nullable="false" />
+          <Property Name="Tra" Type="bit" />
+          <Property Name="NgayTra" Type="date" />
+          <Property Name="GiaHan" Type="int" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -345,8 +341,7 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
             <End Role="TaiKhoan" EntitySet="TaiKhoan" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="WebBangDiaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -412,6 +407,9 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
           <NavigationProperty Name="BangDia" Relationship="Self.fk_DH_BD" FromRole="DatHang" ToRole="BangDia" />
           <NavigationProperty Name="LoaiHinhGiaoDich" Relationship="Self.fk_DH_LoaiHinh" FromRole="DatHang" ToRole="LoaiHinhGiaoDich" />
           <NavigationProperty Name="TaiKhoan" Relationship="Self.fk_DH_TK" FromRole="DatHang" ToRole="TaiKhoan" />
+          <Property Name="Tra" Type="Boolean" />
+          <Property Name="NgayTra" Type="DateTime" Precision="0" />
+          <Property Name="GiaHan" Type="Int32" />
         </EntityType>
         <EntityType Name="HangSanXuat">
           <Key>
@@ -760,6 +758,9 @@ warning 6013: The table/view 'WebBangDia.dbo.CauHinh' does not have a primary ke
           <EntitySetMapping Name="DatHangs">
             <EntityTypeMapping TypeName="WebBangDiaModel.DatHang">
               <MappingFragment StoreEntitySet="DatHang">
+                <ScalarProperty Name="GiaHan" ColumnName="GiaHan" />
+                <ScalarProperty Name="NgayTra" ColumnName="NgayTra" />
+                <ScalarProperty Name="Tra" ColumnName="Tra" />
                 <ScalarProperty Name="MaDH" ColumnName="MaDH" />
                 <ScalarProperty Name="MaTK" ColumnName="MaTK" />
                 <ScalarProperty Name="MaBD" ColumnName="MaBD" />
