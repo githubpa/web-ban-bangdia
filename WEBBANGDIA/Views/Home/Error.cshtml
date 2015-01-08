@@ -1,0 +1,7 @@
+﻿@{
+    ViewBag.Title = "Error";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+
+<h2 style="float: left; width: 100%;">Error !</h2>
+<h3 style ="float: left; width: 100%;">@Html.Raw(Session["Error"])</h3>

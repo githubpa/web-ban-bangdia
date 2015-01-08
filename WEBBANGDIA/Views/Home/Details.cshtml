@@ -42,9 +42,9 @@
     <div class="main_image">
         @if (Model.AnhDaiDien == null || Model.AnhDaiDien == "")
         {
-            Model.AnhDaiDien = @"\Images\Temp\DVD.gif";
+            Model.AnhDaiDien = @"Temp\DVD.gif";
         }
-        <img src="@Html.DisplayFor(model => model.AnhDaiDien)" />
+        <img src="\Images\@Html.DisplayFor(model => model.AnhDaiDien)" />
     </div>
     
     <div class="main_title">

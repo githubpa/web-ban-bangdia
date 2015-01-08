@@ -1,0 +1,72 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<WEBBANGDIA.Models.BangDia>
+@{
+    ViewBag.Title = "Kết quả tìm kiếm";
+    Layout = "~/Views/Shared/GiaoDien.cshtml";
+}
+<script type="text/javascript">
+    $(function () {
+        $('#form0').submit(function () {
+            if ($(this).valid()) {
+                $.ajax({
+                    url: this.action, type: this.method, data: $(this).serialize(), success: function (result) {
+                        $('#ajaxUpdate').html(result);
+                    }
+                });
+            }
+        });
+        return false;
+    });
+</script>
+
+@using (Html.BeginForm("Search", "Home", FormMethod.Post))
+{
+    <div style="float: left; padding-right: 5%; padding-bottom: 13px; margin-bottom: 10px; padding-top: 15px; width: 45%; text-align: right; background: #FFFFFF; border-bottom: 2px solid #808080;">
+        Tiêu chí:
+        <select id="dropdown" title="Sắp xếp" name="dropdown" class="">
+            <option value="0">--Chọn--</option>
+            <option value="1">Theo thứ tự A - Z </option>
+            <option value="2">Giá tăng dần</option>
+            <option value="3">Giá giảm dần</option>
+            <option value="4">Lượt xem giảm dần</option>
+            <option value="5">Lượt mua giảm dần</option>
+            <option value="6">Lượt thuê giảm dần</option>
+        </select>
+        <input type="submit" value="Sắp xếp" />
+    </div>
+    <script type="text/javascript">
+        $('#dropdown').val('@Session["Home"]');
+    </script>
+}
+    <div id="listproduct">
+        @foreach (var item in Model)
+        {
+            if (item.An != true)
+            {
+                <div class="product">
+                    <div class="title">@Html.DisplayFor(itemBd => @item.TenBD)</div>
+                    @if (string.IsNullOrEmpty(item.AnhDaiDien))
+                    {
+                        item.AnhDaiDien = @"Temp/DVD.gif";
+                    }
+                    <a href="#">
+                        <img src="/Images/@Html.DisplayFor(itemBd => @item.AnhDaiDien)" />
+                    </a>
+                    <div class="money">@Html.DisplayFor(itemBd => @item.Gia)</div>
+                    <div class="details">
+                        @Html.ActionLink("Chi tiết", "Details", "Home", new {id = @item.MaBD}, null);
+                    </div>
+                    <div class="dathang">
+                        @Html.ActionLink("Đặt hàng", "Order", "Home", new {id = @item.MaBD}, null);
+                    </div>
+                </div>
+            }
+        }
+        @Html.PagedListPager(Model, page => Url.Action("Search", new { page = page }), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </div>
+
+<script type="text/javascript">
+    function SapXep(id) {
+        $.post("/trang-chu", { "id": id });
+    }
+</script>

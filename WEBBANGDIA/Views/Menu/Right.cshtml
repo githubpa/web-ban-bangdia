@@ -1,0 +1,64 @@
+﻿@using WEBBANGDIA.Models;
+<div style="float: left; background: #d3d4d0; width: 240px;">
+    <div style="padding-top: 15px; padding-bottom: 15px; width: 240px; text-align: center; background: #000000; color: white; float: left;">
+        Bạn muốn tìm ?
+    </div>
+    <div style="padding-top: 15px; padding-bottom: 15px; width: 240px; text-align: center; float: left;">
+        @using (Html.BeginForm("Filter", "Home", FormMethod.Post))
+        {
+            <div style="float: left; width: 100%;">Giá thành</div>
+            <div style="float: left; width: 100%;">
+                <select id="dropdownGia" name="dropdownGia" style="padding-left: 10px; width: 200px">
+                    <option value="0"> nhỏ hơn hoặc bằng 500k</option>
+                    <option value="1"> lớn hơn 500k</option>
+                    <option value="2"> nhỏ hơn hoặc bằng 100k </option>
+                    <option value="3"> lớn hơn 100k </option>
+                    <option value="4"> Rẻ nhất </option>
+                    <option value="5"> Đắt nhất </option>
+                </select>
+            </div>
+            <div style="float: left; width: 100%;">Lượt xem</div>
+            <div style="float: left; width: 100%;">
+                <select id="dropdownXem" name="dropdownXem" style="padding-left: 10px; width: 200px">
+                    <option value="0"> Xem nhiều nhất</option>
+                    <option value="1"> Xem ít nhất</option>
+                    <option value="2"> nhỏ hơn 100 luọt</option>
+                    <option value="3"> lớn hơn hoặc bằng 100 lượt </option>
+                    <option value="4"> nhỏ hơn 1000 luọt</option>
+                    <option value="5"> lớn hơn 1000 lượt </option>
+                </select>
+            </div>
+            <div style="float: left; width: 100%;">Thể loại</div>
+            var list2 = ((List<DanhMuc>)ViewBag.Right2);
+            if (list2 != null)
+            {
+                <select id="dropdownTheLoai"  name="dropdownTheLoai" style="padding-left: 10px; width: 200px">
+                    @foreach (var item in list2)
+                    {
+                        <option value="@item.MaDM"> @item.TenDanhMuc</option>
+                    }
+                </select>
+            }
+            <div style="float: left; width: 100%;">Hãng sản xuất</div>
+
+            var list = ((List<HangSanXuat>)ViewBag.Right);
+            if (list != null)
+            {
+                <select id="dropdownHsx"  name="dropdownHsx" style="padding-left: 10px; width: 200px">
+                    @foreach (var item in list)
+                    {
+                        <option value="@item.MaHSX"> @item.TenHSX</option>
+                    }
+                </select>
+            }
+            <input type="submit" value="Lọc" style="margin-top: 10px; width: 100px;" />
+            <script type="text/javascript">
+                $('#dropdownGia').val('@Session["Gia"]');
+                $('#dropdownTheLoai').val('@Session["TheLoai"]');
+                $('#dropdownHsx').val('@Session["Hsx"]');
+                $('#dropdownXem').val('@Session["Xem"]');
+            </script>
+            
+        }
+    </div>
+</div>

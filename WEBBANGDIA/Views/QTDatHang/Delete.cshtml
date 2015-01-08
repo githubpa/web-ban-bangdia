@@ -8,46 +8,51 @@
 
 <h3>Are you sure you want to delete this?</h3>
 <fieldset>
-    <legend>DatHang</legend>
 
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.MaDH)*@
-        Mã đặt hàng
+    <div class="display">
+        <div class="display-label">
+            @*@Html.DisplayNameFor(model => model.MaDH)*@
+            Mã đặt hàng
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.MaDH)
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.MaDH)
+    <div class="display">
+        <div class="display-label">
+            @*@Html.DisplayNameFor(model => model.TaiKhoan.TenTK)*@
+            Tên tài khoản
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+        </div>
     </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.TaiKhoan.TenTK)*@
-        Tên tài khoản
+    <div class="display">
+        <div class="display-label">
+            @*@Html.DisplayNameFor(model => model.BangDia.TenBD)*@
+            Tên băng đĩa
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.BangDia.TenBD)
+        </div>
     </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.TaiKhoan.TenTK)
+    <div class="display">
+        <div class="display-label">
+            @*@Html.DisplayNameFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)*@
+            Tên loại hình
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)
+        </div>
     </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.BangDia.TenBD)*@
-        Tên băng đĩa
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.BangDia.TenBD)
-    </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)*@
-        Tên loại hình
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LoaiHinhGiaoDich.TenLoaiHinh)
-    </div>
-
-    <div class="display-label">
-         @*@Html.DisplayNameFor(model => model.NgayDat)*@
-        Ngày đặt
-    </div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.NgayDat)
+    <div class="display">
+        <div class="display-label">
+            @*@Html.DisplayNameFor(model => model.NgayDat)*@
+            Ngày đặt
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.NgayDat)
+        </div>
     </div>
 </fieldset>
 @using (Html.BeginForm()) {
