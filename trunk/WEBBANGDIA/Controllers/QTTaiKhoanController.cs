@@ -53,6 +53,8 @@ namespace WEBBANGDIA.Controllers
         {
             if (ModelState.IsValid)
             {
+                taikhoan.An = false;
+                taikhoan.NgayTao = DateTime.Today;
                 db.TaiKhoans.Add(taikhoan);
                 db.SaveChanges();
                 return RedirectToAction("Index");

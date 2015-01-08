@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 using WEBBANGDIA.Models;
 
 namespace WEBBANGDIA.Controllers
@@ -15,11 +16,75 @@ namespace WEBBANGDIA.Controllers
 
         //
         // GET: /QTDatHang/
-
-        public ActionResult Index()
+        public ActionResult Index(string sortOrder, string currentFilter, string searchString, int? trang)
         {
-            var dathangs = db.DatHangs.Include(d => d.BangDia).Include(d => d.LoaiHinhGiaoDich).Include(d => d.TaiKhoan);
-            return View(dathangs.ToList());
+            if (Session["LogedName"] != null)
+            {
+                ViewBag.CurrentSort = sortOrder;
+                ViewBag.NameSortParm = sortOrder == "Name" ? "Name_desc" : "Name";
+                ViewBag.NameLhSortParm = sortOrder == "NameLh" ? "NameLh_desc" : "NameLh";
+                ViewBag.NameBdSortParm = sortOrder == "NameBd" ? "NameBd_desc" : "NameBd";
+                ViewBag.DateSortParm = sortOrder == "Date" ? "Date_desc" : "Date";
+                ViewBag.TraSortParm = sortOrder == "Tra" ? "Tra_desc" : "Tra";
+                if (searchString != null)
+                {
+                    trang = 1;
+                }
+                else
+                {
+                    searchString = currentFilter;
+                }
+
+                ViewBag.CurrentFilter = searchString;
+
+                var dathangs = from s in db.DatHangs
+                               select s;
+                if (!String.IsNullOrEmpty(searchString))
+                {
+                    dathangs = dathangs.Where(s => s.BangDia.TenBD.ToUpper().Contains(searchString.ToUpper()));
+                }
+                switch (sortOrder)
+                {
+                    case "NameLh":
+                        dathangs = dathangs.OrderBy(s => s.LoaiHinhGiaoDich.TenLoaiHinh);
+                        break;
+                    case "NameLh_desc":
+                        dathangs = dathangs.OrderByDescending(s => s.LoaiHinhGiaoDich.TenLoaiHinh);
+                        break;
+                    case "NameBd":
+                        dathangs = dathangs.OrderBy(s => s.BangDia.TenBD);
+                        break;
+                    case "NameBd_desc":
+                        dathangs = dathangs.OrderByDescending(s => s.BangDia.TenBD);
+                        break;
+                    case "Date":
+                        dathangs = dathangs.OrderBy(s => s.NgayDat);
+                        break;
+                    case "Date_desc":
+                        dathangs = dathangs.OrderByDescending(s => s.NgayDat);
+                        break;
+                    case "Tra":
+                        dathangs = dathangs.OrderBy(s => s.Tra);
+                        break;
+                    case "Tra_desc":
+                        dathangs = dathangs.OrderByDescending(s => s.Tra);
+                        break;
+                    case "Name":
+                        dathangs = dathangs.OrderBy(s => s.TaiKhoan.TenTK);
+                        break;
+                    case "Name_desc":
+                        dathangs = dathangs.OrderByDescending(s => s.TaiKhoan.TenTK);
+                        break;
+                    default:  // Name ascending 
+                        dathangs = dathangs.OrderBy(s => s.BangDia.TenBD);
+                        break;
+                }
+                const int pageSize = 15;
+                int pageNum = trang ?? 1;
+
+                return View(dathangs.ToPagedList(pageNum, pageSize));
+            }
+            return RedirectToAction("Login", "LogQT");
         }
 
         //
@@ -55,6 +120,8 @@ namespace WEBBANGDIA.Controllers
         {
             if (ModelState.IsValid)
             {
+                dathang.NgayDat = DateTime.Today;
+                dathang.GiaHan = 1;
                 db.DatHangs.Add(dathang);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -76,6 +143,7 @@ namespace WEBBANGDIA.Controllers
             {
                 return HttpNotFound();
             }
+
             ViewBag.MaBD = new SelectList(db.BangDias, "MaBD", "TenBD", dathang.MaBD);
             ViewBag.MaLoaiHinh = new SelectList(db.LoaiHinhGiaoDiches, "MaLoaiHinh", "TenLoaiHinh", dathang.MaLoaiHinh);
             ViewBag.MaTK = new SelectList(db.TaiKhoans, "MaTK", "TenTK", dathang.MaTK);
@@ -91,6 +159,10 @@ namespace WEBBANGDIA.Controllers
         {
             if (ModelState.IsValid)
             {
+                if (dathang.Tra == true)
+                {
+                    dathang.NgayTra = DateTime.Today;
+                }
                 db.Entry(dathang).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -101,6 +173,36 @@ namespace WEBBANGDIA.Controllers
             return View(dathang);
         }
 
+        public ActionResult GiaHan(int id = 0)
+        {
+            DatHang dathang = db.DatHangs.Find(id);
+            if (dathang == null)
+            {
+                return HttpNotFound();
+            }
+
+            ViewBag.MaBD = new SelectList(db.BangDias, "MaBD", "TenBD", dathang.MaBD);
+            ViewBag.MaLoaiHinh = new SelectList(db.LoaiHinhGiaoDiches, "MaLoaiHinh", "TenLoaiHinh", dathang.MaLoaiHinh);
+            ViewBag.MaTK = new SelectList(db.TaiKhoans, "MaTK", "TenTK", dathang.MaTK);
+            return View(dathang);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GiaHan(DatHang dathang)
+        {
+            if (ModelState.IsValid)
+            {
+                dathang.GiaHan = dathang.GiaHan+1;
+                db.Entry(dathang).State = EntityState.Modified;
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            ViewBag.MaBD = new SelectList(db.BangDias, "MaBD", "TenBD", dathang.MaBD);
+            ViewBag.MaLoaiHinh = new SelectList(db.LoaiHinhGiaoDiches, "MaLoaiHinh", "TenLoaiHinh", dathang.MaLoaiHinh);
+            ViewBag.MaTK = new SelectList(db.TaiKhoans, "MaTK", "TenTK", dathang.MaTK);
+            return View(dathang);
+        }
         //
         // GET: /QTDatHang/Delete/5
 

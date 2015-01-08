@@ -18,9 +18,16 @@ namespace WEBBANGDIA.Controllers
             return PartialView();
         }
 
-        public ActionResult MenuRightLuotXem()
+        [ChildActionOnly]
+        public ActionResult Search()
         {
-            ViewBag.MenuRightLuotXem = dbEntities.BangDias.ToList().OrderByDescending(s => s.LuotView);
+            return PartialView();
+        }
+        [ChildActionOnly]
+        public ActionResult Right()
+        {
+            ViewBag.Right = dbEntities.HangSanXuats.ToList();
+            ViewBag.Right2 = dbEntities.DanhMucs.ToList();
             return PartialView();
         }
     }
