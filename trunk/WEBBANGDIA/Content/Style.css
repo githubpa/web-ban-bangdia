@@ -14,13 +14,14 @@
     width:100%;
 }
 #header #logo{
-    background: #ff0000;
+    /*background: #ff0000;*/
     float:left;
-    height:200px;
+    height: auto;
+    margin: 20px;
 }
 #header #logo img{
-    height:100%;
-    width: auto;
+    height: 160px;
+    width: 160px;    
     float:left;
 }
 #header #banner{
@@ -40,11 +41,10 @@
 }
 #menu{
     width:100%;
-    height:60px;
+    height:40px;
     float:left;
-    border-top:#0094ff solid;
-    border-bottom:#000000 solid;
-    background:#ffffff;
+    background:#f6f4f4;
+    border-bottom: 2px solid #808080;
 }
 #menu ul{
     list-style: none;    
@@ -56,19 +56,19 @@
     list-style:none;
     border-right: 2px #000000 dotted;
     float:left;
-    
     font-size:20px;
-    height:60px;
+    height:40px;
 }
 
 #menu ul li a{
     float:left;
-    margin-top:20px;
+    margin-top:10px;
     text-decoration:none;
     color:black;
 }
 #menu ul li a:hover{
     color: #ffffff;
+        background: #0094ff;
 }
 #menu ul li:hover{
     background: #0094ff;
@@ -118,6 +118,7 @@
 }
 #menuleft #danhmuc ul li a:hover{
     color:white;
+    background:#0094ff;
 }
 #menuright{
     width:20%;
@@ -243,6 +244,7 @@
 }
 #main .contentlienhe {
     width:95%;
+    float: left;
     border:1px solid #8826ff;
     background:#fff;
     margin-top:10px;

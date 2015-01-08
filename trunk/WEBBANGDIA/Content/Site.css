@@ -1,33 +1,16 @@
 ﻿html {
+    margin: 0 auto;
 }
 
 body {
+    margin: 0 auto;
     background-color: #fff;
     border-top: solid 10px #000;
     color: #333;
-    font-size: .85em;
-    font-family: "Segoe UI", Verdana, Helvetica, Sans-Serif;
-    margin: 0 auto;
     padding: 0;
     width: 1200px;
 }
 
-a {
-    color: #333;
-    outline: none;
-    padding-left: 3px;
-    padding-right: 3px;
-    text-decoration: underline;
-}
-
-    a:link, a:visited,
-    a:active, a:hover {
-        color: #333;
-    }
-
-    a:hover {
-        background-color: #c7d1d6;
-    }
 
 header {
     height: 100px;
@@ -149,7 +132,6 @@ h5, h6 {
 .main-content {
     background: url("../Images/accent.png") no-repeat;
     padding-left: 10px;
-    padding-top: 30px;
 }
 
 .featured + .main-content {
@@ -443,11 +425,10 @@ aside {
 
 /* forms */
 fieldset {
-    border: none;
+    border-left: solid 1px #008080;
     margin: 0;
-    padding-left: 40px;
     background: #E7E7E7;
-    width: 950px;
+    width: 96%;
     height: auto;
 }
 
@@ -481,7 +462,7 @@ input, textarea {
     font-size: 1.2em;
     margin: 5px 0 6px 0;
     padding: 5px;
-    width: 300px;
+    width: 200px;
 }
 
 textarea {
@@ -505,9 +486,7 @@ button {
     background-color: #d3dce0;
     border: 1px solid #787878;
     cursor: pointer;
-    font-size: 1.2em;
-    font-weight: 600;
-    padding: 7px;
+    padding-left: 4px;
     margin-right: 8px;
     width: auto;
 }
@@ -854,4 +833,69 @@ tr.pager td {
 
     .Dia .LienKet {
         text-align: center;
+    }
+
+.editor {
+    float: left;
+    height: auto;
+    width: 100%;
+}
+
+    .editor .editor-label {
+        float: left;
+        text-align: center;
+        float: left;
+        background: teal;
+        color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 25%;
+        padding-left: 5px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .editor .editor-field {
+        float: left;
+        margin: 10px 0 0 0;
+        width: 70%;
+        height: auto;
+    }
+
+        .editor .editor-field .txt {
+            float: left;
+            width: 60%;
+            height: auto;
+        }
+
+        .editor .editor-field .drl {
+            float: left;
+            width: 60%;
+        }
+
+.display {
+    width: 100%;
+    height: auto;
+    border-bottom: solid darkseagreen 1px;
+    float: left;
+    margin-bottom: 2px;
+    padding-bottom: 2px;
+}
+
+    .display .display-label {
+        text-align: center;
+        float: left;
+        background: teal;
+        color: white;
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 25%;
+        padding-left: 5px;
+        margin: 10px 0px 0px 0px;
+    }
+
+    .display .display-field {
+        float: left;
+        width: 75%;
+        margin: 10px 0px 0px 0px;
+        padding-left: 10px;
     }
