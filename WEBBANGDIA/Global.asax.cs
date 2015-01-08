@@ -5,7 +5,8 @@ using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
-using System.Web.Routing;
+using System.Web.Routing;          
+using  System.IO;
 
 namespace WEBBANGDIA
 {
@@ -14,7 +15,7 @@ namespace WEBBANGDIA
 
     public class MvcApplication : System.Web.HttpApplication
     {
-        protected void Application_Start()
+        protected void Application_Start(object sender, EventArgs e)
         {
             AreaRegistration.RegisterAllAreas();
 
@@ -23,9 +24,10 @@ namespace WEBBANGDIA
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
             AuthConfig.RegisterAuth();
+            
         }
 
-        protected void Session_Start()
+        protected void Session_Start(object sender, EventArgs e)
         {
             Session["CheckLogin"] = "";
             Session["FullName"] = "bạn!";
@@ -33,12 +35,18 @@ namespace WEBBANGDIA
             Session["Home"] = 0;
             Session["AllPro"] = 0;
             Session["LogedFullName"] = "Chào bạn!";
-			Session["MaTK"]="";
-
+			Session["MaTK"]="";      
+            Session["search"] = "";
+            Session["Error"] = "";
+            Session["Gia"] = "";
+            Session["Xem"] = "";
+            Session["TheLoai"] = "";
+            Session["Hsx"] = "";
         }
 
-        protected void Session_End()
+        protected void Session_End(object sender, EventArgs e)
         {
+            Session["DangTruyCap"] = 0;
             Session["CheckLogin"] = "";
             Session["FullName"] = "bạn!";
             Session["UserName"] = "";
@@ -46,6 +54,12 @@ namespace WEBBANGDIA
             Session["AllPro"] = 0;
             Session["LogedFullName"] = "Chào bạn!";
 			Session["MaTK"]="";
+            Session["search"] = "";
+            Session["Error"] = "";
+            Session["Gia"] = "";
+            Session["Xem"] = "";
+            Session["TheLoai"] = "";
+            Session["Hsx"] = "";
         }
     }
 }
